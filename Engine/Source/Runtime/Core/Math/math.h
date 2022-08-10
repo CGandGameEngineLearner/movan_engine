@@ -243,10 +243,10 @@ namespace Movan
         static float  cos(float value) { return std::cos(value); }
         static float  tan(const Radian& rad) { return std::tan(rad.valueRadians()); }
         static float  tan(float value) { return std::tan(value); }
-        static Radian arccos(float value);
-        static Radian arcsin(float value);
-        static Radian arctan(float value) { return Radian(std::atan(value)); }
-        static Radian arctan2(float y_v, float x_v) { return Radian(std::atan2(y_v, x_v)); }
+        static Radian acos(float value);
+        static Radian asin(float value);
+        static Radian atan(float value) { return Radian(std::atan(value)); }
+        static Radian atan2(float y_v, float x_v) { return Radian(std::atan2(y_v, x_v)); }
 
         template<class T>
         static constexpr T max(const T A, const T B)
