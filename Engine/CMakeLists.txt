@@ -1,1 +1,16 @@
-﻿add_executable(Engine "Engine.cpp" "Engine.h" "Source/Runtime/Core/Math/math.h" "Source/Runtime/Core/Math/math.cpp" "Source/Runtime/Core/Math/random.h" "Source/Runtime/Core/Math/vector2.cpp" "Source/Runtime/Core/Meta/Reflection/标头1.h" "Source/Runtime/Core/Math/vector2.h")
+﻿
+
+#aux_source_directory(. DIR_SRCS)
+     
+
+     
+
+     
+
+# 指定生成目标  
+#add_executable(Engine ${DIR_SRCS})
+
+file(GLOB TEST_RESULT LIST_DIRECT false *.cpp)
+
+
+add_executable (MovanStudio TEST_RESULT)
