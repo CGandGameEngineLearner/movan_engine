@@ -5,6 +5,20 @@ cmake_minimum_required (VERSION 3.8)
 
 project ("MovanStudio")
 
+#https://oomake.com/question/2034387
+MACRO(SUBDIRLIST result curdir)
+  FILE(GLOB children RELATIVE ${curdir} ${curdir}/*)
+  SET(dirlist "")
+  FOREACH(child ${children})
+    IF(IS_DIRECTORY ${curdir}/${child})
+      LIST(APPEND dirlist ${child})
+    ENDIF()
+  ENDFOREACH()
+  SET(${result} ${dirlist})
+ENDMACRO()
+
+
+
 # 将源代码添加到此项目的可执行文件。
 add_executable (MovanStudio "MovanStudio.cpp" "MovanStudio.h")
 
