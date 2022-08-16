@@ -27,6 +27,22 @@ namespace Movan
 	// public: virtual std::string getTypeName() override {return #class_name;}
 
 
+    namespace Reflection
+    {
+        class TypeMeta;
+        class FieldAccessor;
+        class ArrayAccessor;
+        class ReflectionInstance;
+    } // namespace Reflection
+
+
+    typedef std::function<void(void*, void*)>      SetFuncion;
+    typedef std::function<void* (void*)>            GetFuncion;
+    typedef std::function<const char* ()>           GetNameFuncion;
+    typedef std::function<void(int, void*, void*)> SetArrayFunc;
+    typedef std::function<void* (int, void*)>       GetArrayFunc;
+    typedef std::function<int(void*)>              GetSizeFunc;
+    typedef std::function<bool()>                  GetBoolFunc;
 
 
 
