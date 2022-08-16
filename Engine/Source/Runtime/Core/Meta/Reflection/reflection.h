@@ -35,7 +35,7 @@ namespace Movan
         class ReflectionInstance;
     } // namespace Reflection
 
-
+    //https://blog.csdn.net/xf_zhen/article/details/52224139
     typedef std::function<void(void*, void*)>      SetFuncion;
     typedef std::function<void* (void*)>            GetFuncion;
     typedef std::function<const char* ()>           GetNameFuncion;
