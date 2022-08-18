@@ -44,6 +44,15 @@ namespace Movan
     typedef std::function<int(void*)>              GetSizeFunc;
     typedef std::function<bool()>                  GetBoolFunc;
 
+    typedef std::function<void* (const PJson&)>                          ConstructorWithPJson;
+    typedef std::function<PJson(void*)>                                 WritePJsonByName;
+    typedef std::function<int(Reflection::ReflectionInstance*&, void*)> GetBaseClassReflectionInstanceListFunc;
+
+    typedef std::tuple<SetFuncion, GetFuncion, GetNameFuncion, GetNameFuncion, GetNameFuncion, GetBoolFunc>
+        FieldFunctionTuple;
+    typedef std::tuple<GetBaseClassReflectionInstanceListFunc, ConstructorWithPJson, WritePJsonByName>
+        ClassFunctionTuple;
+    typedef std::tuple<SetArrayFunc, GetArrayFunc, GetSizeFunc, GetNameFuncion, GetNameFuncion> ArrayFunctionTuple;
 
 
 
