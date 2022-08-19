@@ -48,6 +48,7 @@ namespace Movan
     typedef std::function<PJson(void*)>                                 WritePJsonByName;
     typedef std::function<int(Reflection::ReflectionInstance*&, void*)> GetBaseClassReflectionInstanceListFunc;
 
+    //https://www.cnblogs.com/osbreak/p/9418269.html
     typedef std::tuple<SetFuncion, GetFuncion, GetNameFuncion, GetNameFuncion, GetNameFuncion, GetBoolFunc>
         FieldFunctionTuple;
     typedef std::tuple<GetBaseClassReflectionInstanceListFunc, ConstructorWithPJson, WritePJsonByName>
