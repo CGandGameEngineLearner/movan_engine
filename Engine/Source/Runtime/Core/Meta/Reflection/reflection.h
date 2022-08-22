@@ -79,7 +79,7 @@ namespace Movan
 
             // static void Register();
 
-            static TypeMeta newMetaFromName(std::string type_name);
+            static TypeMeta newMetaFromName(std::string type_name);//以名称命名元数据
 
             static bool               newArrayAccessorFromName(std::string array_type_name, ArrayAccessor& accessor);
             static ReflectionInstance newFromNameAndPJson(std::string type_name, const PJson& json_context);
