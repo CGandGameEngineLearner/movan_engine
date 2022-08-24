@@ -248,6 +248,7 @@ namespace Movan
         static Radian atan(float value) { return Radian(std::atan(value)); }
         static Radian atan2(float y_v, float x_v) { return Radian(std::atan2(y_v, x_v)); }
 
+
         template<class T>
         static constexpr T max(const T A, const T B)
         {
