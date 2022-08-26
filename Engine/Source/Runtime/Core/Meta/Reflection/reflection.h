@@ -101,7 +101,7 @@ namespace Movan
             TypeMeta(std::string type_name);
 
         private:
-            std::vector<FieldAccessor, std::allocator<FieldAccessor>> m_fields;
+            std::vector<FieldAccessor, std::allocator<FieldAccessor>> m_fields;//
 
             std::string m_type_name;
 
