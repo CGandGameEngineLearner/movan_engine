@@ -1,5 +1,5 @@
 #pragma once
-
+#include "../json.h"
 #include <functional>
 #include <string>
 #include <unordered_map>
@@ -12,20 +12,62 @@ namespace Movan
 #define META(...) __attribute__((annotate(#__VA_ARGS__)))
 #define CLASS(class_name, ...) class __attribute__((annotate(#__VA_ARGS__))) class_name
 #define STRUCT(struct_name, ...) struct __attribute__((annotate(#__VA_ARGS__))) struct_name
-	//#define CLASS(class_name,...) class __attribute__((annotate(#__VA_ARGS__))) class_name:public Reflection::object
+    //#define CLASS(class_name,...) class __attribute__((annotate(#__VA_ARGS__))) class_name:public Reflection::object
 #else
-	//变长参数
+    //变长参数
 #define META(...)
 #define CLASS(class_name,...)class class_name;
 #define STRUCT(struct_name,...)struct struct_name;
-	//#define CLASS(class_name,...) class class_name:public Reflection::object
+    //#define CLASS(class_name,...) class class_name:public Reflection::object
 #endif // __REFLECTION_PARSER__
 
 #define REFLECTION_BODY(class_name) \
     friend class Reflection::TypeFieldReflectionOparator::Type##class_name##Operator; \
     friend class PSerializer;
-	// public: virtual std::string getTypeName() override {return #class_name;}
+    // public: virtual std::string getTypeName() override {return #class_name;}
 
+#define REFLECTION_TYPE(class_name) \
+    namespace Reflection \
+    { \
+        namespace TypeFieldReflectionOparator \
+        { \
+            class Type##class_name##Operator; \
+        } \
+    };
+
+
+#define REGISTER_FIELD_TO_MAP(name, value) TypeMetaRegisterinterface::registerToFieldMap(name, value);
+#define REGISTER_BASE_CLASS_TO_MAP(name, value) TypeMetaRegisterinterface::registerToClassMap(name, value);
+#define REGISTER_ARRAY_TO_MAP(name, value) TypeMetaRegisterinterface::registerToArrayMap(name, value);
+#define UNREGISTER_ALL TypeMetaRegisterinterface::unregisterAll();
+
+
+#define MOVAN_REFLECTION_NEW(name, ...) Reflection::ReflectionPtr(#name, new name(__VA_ARGS__));
+#define MOVAN_REFLECTION_DELETE(value) \
+    if (value) \
+    { \
+        delete value.operator->(); \
+        value.getPtrReference() = nullptr; \
+    }
+
+
+#define MOVAN_REFLECTION_DEEP_COPY(type, dst_ptr, src_ptr) \
+    *static_cast<type*>(dst_ptr) = *static_cast<type*>(src_ptr.getPtr());
+
+#define TypeMetaDef(class_name, ptr) \
+    Movan::Reflection::ReflectionInstance(Movan::Reflection::TypeMeta::newMetaFromName(#class_name), (class_name*)ptr)
+
+#define TypeMetaDefPtr(class_name, ptr) \
+    new Movan::Reflection::ReflectionInstance(Movan::Reflection::TypeMeta::newMetaFromName(#class_name), \
+                                              (class_name*)ptr)
+
+    template<typename T, typename U, typename = void>
+    struct is_safely_castable : std::false_type
+    {};
+
+    template<typename T, typename U>
+    struct is_safely_castable<T, U, std::void_t<decltype(static_cast<U>(std::declval<T>()))>> : std::true_type
+    {};
 
     namespace Reflection
     {
@@ -44,8 +86,8 @@ namespace Movan
     typedef std::function<int(void*)>              GetSizeFunc;
     typedef std::function<bool()>                  GetBoolFunc;
 
-    typedef std::function<void* (const PJson&)>                          ConstructorWithPJson;
-    typedef std::function<PJson(void*)>                                 WritePJsonByName;
+    typedef std::function<void* (const MJson&)>                          ConstructorWithPJson;
+    typedef std::function<MJson(void*)>                                 WritePJsonByName;
     typedef std::function<int(Reflection::ReflectionInstance*&, void*)> GetBaseClassReflectionInstanceListFunc;
 
     //https://www.cnblogs.com/osbreak/p/9418269.html
@@ -82,8 +124,8 @@ namespace Movan
             static TypeMeta newMetaFromName(std::string type_name);//以名称命名元数据
 
             static bool               newArrayAccessorFromName(std::string array_type_name, ArrayAccessor& accessor);
-            static ReflectionInstance newFromNameAndPJson(std::string type_name, const PJson& json_context);
-            static PJson              writeByName(std::string type_name, void* instance);
+            static ReflectionInstance newFromNameAndPJson(std::string type_name, const MJson& json_context);
+            static MJson              writeByName(std::string type_name, void* instance);
 
             std::string getTypeName();
 

@@ -99,7 +99,7 @@ namespace Movan
             return false;
         }
 
-        ReflectionInstance TypeMeta::newFromNameAndPJson(std::string type_name, const PJson& json_context)
+        ReflectionInstance TypeMeta::newFromNameAndPJson(std::string type_name, const MJson& json_context)
         {
             auto iter = m_class_map.find(type_name);
 
