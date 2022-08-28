@@ -16,7 +16,7 @@ namespace Movan
 #else
     //变长参数
 #define META(...)
-#define CLASS(class_name,...)class class_name;
+#define CLASS(class_name,...)class class_name;//用CLASS创建的类具有反射功能
 #define STRUCT(struct_name,...)struct struct_name;
     //#define CLASS(class_name,...) class class_name:public Reflection::object
 #endif // __REFLECTION_PARSER__
