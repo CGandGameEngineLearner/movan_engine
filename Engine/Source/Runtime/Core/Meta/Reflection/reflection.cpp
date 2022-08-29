@@ -118,7 +118,7 @@ namespace Movan
             {
                 return std::get<2>(*iter->second)(instance);
             }
-            return PJson();
+            return MJson();
         }
 
         std::string TypeMeta::getTypeName() { return m_type_name; }
@@ -313,4 +313,4 @@ namespace Movan
             return *this;
         }
     } // namespace Reflection
-} // namespace Piccolo
+} // namespace Movan

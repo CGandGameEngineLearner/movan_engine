@@ -5,7 +5,8 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
-
+//反射机制的原理可以看↓
+//https://zhuanlan.zhihu.com/p/502729373
 namespace Movan
 {
 #if defined(__REFLECTION_PARSER__)//如果预设了反射解析器 
@@ -150,4 +151,46 @@ namespace Movan
             bool m_is_valid;
         };
 	}
+
+
+    class FieldAccessor
+    {
+        friend class TypeMeta;
+
+    public:
+        FieldAccessor();
+
+        void* get(void* instance);
+        void set(void* instance, void* value);
+
+
+        TypeMeta getOwnerTypeMeta();
+
+
+        bool getTypeMeta(TypeMeta& field_type);
+        const char* getFieldName()const;
+        const char* getFieldTypeName();
+        const char* getFiedTypeName();
+        bool isArrayType();
+
+        FieldAccessor& operator=(const FieldAccessor& dest);
+        const char* getArrayTypeName();
+        const char* getElementTypeName();
+        void set(int index, void* instance, void* element_value);
+
+        void* get(int index, void* instance);
+        int getSize(void* instance);
+
+        FieldAccessor& operator=(ArrayAccessor& dest);
+
+    private:
+        FieldAccessor(FieldFunctionTuple* functions);
+        FieldFunctionTuple* m_functions;
+        const char* m_field_name;
+        const char* m_field_type_name;
+
+    };
+
+
+    
 }
