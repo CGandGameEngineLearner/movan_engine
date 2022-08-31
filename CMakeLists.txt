@@ -29,9 +29,9 @@ source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}" FILES ${HEADER_FILES} ${SOURCE_F
 add_executable (MovanStudio "MovanStudio.cpp" "MovanStudio.h")
 
 # TODO: 如有需要，请添加测试并安装目标。
-add_subdirectory("ThirdParty")
+
 add_subdirectory("Engine")
 
 
 set_property(TARGET "Engine" PROPERTY FOLDER MovanStudio)
-set_property(TARGET "json11" PROPERTY FOLDER "MovanStudio/ThirdParty")
+

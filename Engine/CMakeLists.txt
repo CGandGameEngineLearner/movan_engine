@@ -1,6 +1,6 @@
 ﻿project ("Engine")
 
-
+add_subdirectory("ThirdParty")
 FOREACH(subdir ${SUBDIRS})
   ADD_SUBDIRECTORY(${subdir})
   
