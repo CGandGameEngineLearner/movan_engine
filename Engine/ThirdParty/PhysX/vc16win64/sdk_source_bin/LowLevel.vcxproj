@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="debug|x64">
+      <Configuration>debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="checked|x64">
+      <Configuration>checked</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="profile|x64">
+      <Configuration>profile</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release|x64">
+      <Configuration>release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1DE8AD6E-19BD-3BC2-AE39-76E636B3C30D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>LowLevel</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='checked|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='profile|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='debug|x64'">C:\Users\13533\Downloads\PhysX-4.1\physx\bin\win.x86_64.vc142.mt\debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='debug|x64'">LowLevel.dir\debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='debug|x64'">LowLevel_static_64</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='checked|x64'">C:\Users\13533\Downloads\PhysX-4.1\physx\bin\win.x86_64.vc142.mt\checked\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='checked|x64'">LowLevel.dir\checked\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='checked|x64'">LowLevel_static_64</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='checked|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='profile|x64'">C:\Users\13533\Downloads\PhysX-4.1\physx\bin\win.x86_64.vc142.mt\profile\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='profile|x64'">LowLevel.dir\profile\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='profile|x64'">LowLevel_static_64</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='profile|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='release|x64'">C:\Users\13533\Downloads\PhysX-4.1\physx\bin\win.x86_64.vc142.mt\release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='release|x64'">LowLevel.dir\release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='release|x64'">LowLevel_static_64</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='release|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\13533\Downloads\PhysX-4.1\physx\source\Common\src\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\software\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevelDynamics\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\common\include\pipeline\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\include;C:\Users\13533\Downloads\PhysX-4.1\physx\..\pxshared\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\foundation\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\physxgpu\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\contact;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\common;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\convex;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\distance;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\sweep;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\gjk;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\intersection;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\mesh;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\hf;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\pcm;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\ccd;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\api\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\collision;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\pipeline;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\utils;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowleveldynamics\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /d2Zi+</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>UninitializedLocalUsageCheck</BasicRuntimeChecks>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CallingConvention>Cdecl</CallingConvention>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4514;4820;4127;4710;4711;4577;4996</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);_DEBUG;WIN32;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;PX_DEBUG=1;PX_CHECKED=1;PX_NVTX=0;PX_SUPPORT_PVD=1;CMAKE_INTDIR="debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>C:\Users\13533\Downloads\PhysX-4.1\physx\bin\win.x86_64.vc142.mt\debug\LowLevel_static_64.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;PX_DEBUG=1;PX_CHECKED=1;PX_NVTX=0;PX_SUPPORT_PVD=1;CMAKE_INTDIR=\"debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\13533\Downloads\PhysX-4.1\physx\source\Common\src\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\software\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevelDynamics\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\common\include\pipeline\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\include;C:\Users\13533\Downloads\PhysX-4.1\physx\..\pxshared\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\foundation\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\physxgpu\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\contact;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\common;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\convex;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\distance;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\sweep;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\gjk;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\intersection;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\mesh;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\hf;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\pcm;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\ccd;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\api\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\collision;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\pipeline;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\utils;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowleveldynamics\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\13533\Downloads\PhysX-4.1\physx\source\Common\src\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\software\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevelDynamics\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\common\include\pipeline\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\include;C:\Users\13533\Downloads\PhysX-4.1\physx\..\pxshared\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\foundation\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\physxgpu\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\contact;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\common;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\convex;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\distance;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\sweep;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\gjk;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\intersection;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\mesh;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\hf;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\pcm;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\ccd;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\api\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\collision;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\pipeline;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\utils;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowleveldynamics\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='checked|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\13533\Downloads\PhysX-4.1\physx\source\Common\src\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\software\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevelDynamics\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\common\include\pipeline\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\include;C:\Users\13533\Downloads\PhysX-4.1\physx\..\pxshared\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\foundation\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\physxgpu\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\contact;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\common;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\convex;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\distance;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\sweep;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\gjk;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\intersection;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\mesh;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\hf;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\pcm;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\ccd;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\api\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\collision;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\pipeline;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\utils;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowleveldynamics\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /d2Zi+</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CallingConvention>Cdecl</CallingConvention>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4514;4820;4127;4710;4711;4577;4996</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;NDEBUG;WIN32;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;PX_CHECKED=1;PX_NVTX=0;PX_SUPPORT_PVD=1;CMAKE_INTDIR="checked"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>C:\Users\13533\Downloads\PhysX-4.1\physx\bin\win.x86_64.vc142.mt\checked\LowLevel_static_64.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;NDEBUG;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;PX_CHECKED=1;PX_NVTX=0;PX_SUPPORT_PVD=1;CMAKE_INTDIR=\"checked\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\13533\Downloads\PhysX-4.1\physx\source\Common\src\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\software\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevelDynamics\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\common\include\pipeline\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\include;C:\Users\13533\Downloads\PhysX-4.1\physx\..\pxshared\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\foundation\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\physxgpu\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\contact;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\common;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\convex;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\distance;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\sweep;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\gjk;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\intersection;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\mesh;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\hf;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\pcm;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\ccd;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\api\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\collision;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\pipeline;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\utils;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowleveldynamics\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\13533\Downloads\PhysX-4.1\physx\source\Common\src\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\software\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevelDynamics\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\common\include\pipeline\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\include;C:\Users\13533\Downloads\PhysX-4.1\physx\..\pxshared\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\foundation\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\physxgpu\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\contact;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\common;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\convex;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\distance;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\sweep;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\gjk;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\intersection;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\mesh;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\hf;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\pcm;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\ccd;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\api\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\collision;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\pipeline;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\utils;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowleveldynamics\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='profile|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\13533\Downloads\PhysX-4.1\physx\source\Common\src\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\software\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevelDynamics\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\common\include\pipeline\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\include;C:\Users\13533\Downloads\PhysX-4.1\physx\..\pxshared\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\foundation\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\physxgpu\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\contact;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\common;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\convex;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\distance;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\sweep;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\gjk;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\intersection;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\mesh;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\hf;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\pcm;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\ccd;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\api\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\collision;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\pipeline;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\utils;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowleveldynamics\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /d2Zi+</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CallingConvention>Cdecl</CallingConvention>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4514;4820;4127;4710;4711;4577;4996</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;NDEBUG;WIN32;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;PX_PROFILE=1;PX_NVTX=0;PX_SUPPORT_PVD=1;CMAKE_INTDIR="profile"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>C:\Users\13533\Downloads\PhysX-4.1\physx\bin\win.x86_64.vc142.mt\profile\LowLevel_static_64.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;NDEBUG;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;PX_PROFILE=1;PX_NVTX=0;PX_SUPPORT_PVD=1;CMAKE_INTDIR=\"profile\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\13533\Downloads\PhysX-4.1\physx\source\Common\src\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\software\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevelDynamics\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\common\include\pipeline\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\include;C:\Users\13533\Downloads\PhysX-4.1\physx\..\pxshared\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\foundation\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\physxgpu\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\contact;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\common;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\convex;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\distance;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\sweep;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\gjk;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\intersection;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\mesh;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\hf;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\pcm;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\ccd;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\api\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\collision;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\pipeline;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\utils;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowleveldynamics\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\13533\Downloads\PhysX-4.1\physx\source\Common\src\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\software\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevelDynamics\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\common\include\pipeline\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\include;C:\Users\13533\Downloads\PhysX-4.1\physx\..\pxshared\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\foundation\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\physxgpu\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\contact;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\common;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\convex;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\distance;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\sweep;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\gjk;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\intersection;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\mesh;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\hf;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\pcm;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\ccd;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\api\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\collision;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\pipeline;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\utils;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowleveldynamics\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\13533\Downloads\PhysX-4.1\physx\source\Common\src\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\software\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevelDynamics\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\common\include\pipeline\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\include;C:\Users\13533\Downloads\PhysX-4.1\physx\..\pxshared\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\foundation\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\physxgpu\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\contact;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\common;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\convex;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\distance;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\sweep;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\gjk;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\intersection;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\mesh;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\hf;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\pcm;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\ccd;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\api\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\collision;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\pipeline;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\utils;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowleveldynamics\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /d2Zi+</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CallingConvention>Cdecl</CallingConvention>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4514;4820;4127;4710;4711;4577;4996</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;NDEBUG;WIN32;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;PX_SUPPORT_PVD=0;CMAKE_INTDIR="release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>C:\Users\13533\Downloads\PhysX-4.1\physx\bin\win.x86_64.vc142.mt\release\LowLevel_static_64.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;NDEBUG;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;PX_SUPPORT_PVD=0;CMAKE_INTDIR=\"release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\13533\Downloads\PhysX-4.1\physx\source\Common\src\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\software\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevelDynamics\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\common\include\pipeline\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\include;C:\Users\13533\Downloads\PhysX-4.1\physx\..\pxshared\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\foundation\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\physxgpu\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\contact;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\common;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\convex;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\distance;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\sweep;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\gjk;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\intersection;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\mesh;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\hf;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\pcm;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\ccd;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\api\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\collision;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\pipeline;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\utils;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowleveldynamics\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\13533\Downloads\PhysX-4.1\physx\source\Common\src\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\software\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevelDynamics\include\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\source\LowLevel\common\include\pipeline\windows;C:\Users\13533\Downloads\PhysX-4.1\physx\include;C:\Users\13533\Downloads\PhysX-4.1\physx\..\pxshared\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\foundation\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\common\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\physxgpu\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\contact;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\common;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\convex;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\distance;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\sweep;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\gjk;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\intersection;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\mesh;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\hf;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\pcm;C:\Users\13533\Downloads\PhysX-4.1\physx\source\geomutils\src\ccd;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\api\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\collision;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\pipeline;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\utils;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include;C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowleveldynamics\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='debug|x64'">Building Custom Rule C:/Users/13533/Downloads/PhysX-4.1/physx/source/compiler/cmake/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='debug|x64'">setlocal
+C:\Users\13533\Downloads\cmake-3.23.0-windows-x86_64\bin\cmake.exe -SC:/Users/13533/Downloads/PhysX-4.1/physx/compiler/public -BC:/Users/13533/Downloads/PhysX-4.1/physx/compiler/vc16win64 --check-stamp-file C:/Users/13533/Downloads/PhysX-4.1/physx/compiler/vc16win64/sdk_source_bin/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='debug|x64'">C:\Users\13533\Downloads\PhysX-4.1\externals\cmakemodules\GetCompilerAndPlatform.cmake;C:\Users\13533\Downloads\PhysX-4.1\externals\cmakemodules\NvidiaBuildOptions.cmake;C:\Users\13533\Downloads\PhysX-4.1\externals\cmakemodules\SetOutputPaths.cmake;C:\Users\13533\Downloads\PhysX-4.1\externals\cmakemodules\template\PxIncludeTemplate.h;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\FastXml.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\LowLevel.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\LowLevelAABB.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\LowLevelDynamics.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysX.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXCharacterKinematic.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXCommon.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXCooking.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXExtensions.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXFoundation.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXPvdSDK.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXTask.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXVehicle.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\SceneQuery.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\SimulationController.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\CMakeLists.txt;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\FastXml.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\LowLevel.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\LowLevelAABB.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\LowLevelDynamics.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysX.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXCharacterKinematic.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXCommon.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXCooking.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXExtensions.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXFoundation.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXPvdSDK.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXTask.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXVehicle.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\SceneQuery.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\SimulationController.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='debug|x64'">C:\Users\13533\Downloads\PhysX-4.1\physx\compiler\vc16win64\sdk_source_bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='checked|x64'">Building Custom Rule C:/Users/13533/Downloads/PhysX-4.1/physx/source/compiler/cmake/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='checked|x64'">setlocal
+C:\Users\13533\Downloads\cmake-3.23.0-windows-x86_64\bin\cmake.exe -SC:/Users/13533/Downloads/PhysX-4.1/physx/compiler/public -BC:/Users/13533/Downloads/PhysX-4.1/physx/compiler/vc16win64 --check-stamp-file C:/Users/13533/Downloads/PhysX-4.1/physx/compiler/vc16win64/sdk_source_bin/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='checked|x64'">C:\Users\13533\Downloads\PhysX-4.1\externals\cmakemodules\GetCompilerAndPlatform.cmake;C:\Users\13533\Downloads\PhysX-4.1\externals\cmakemodules\NvidiaBuildOptions.cmake;C:\Users\13533\Downloads\PhysX-4.1\externals\cmakemodules\SetOutputPaths.cmake;C:\Users\13533\Downloads\PhysX-4.1\externals\cmakemodules\template\PxIncludeTemplate.h;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\FastXml.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\LowLevel.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\LowLevelAABB.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\LowLevelDynamics.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysX.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXCharacterKinematic.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXCommon.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXCooking.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXExtensions.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXFoundation.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXPvdSDK.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXTask.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXVehicle.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\SceneQuery.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\SimulationController.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\CMakeLists.txt;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\FastXml.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\LowLevel.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\LowLevelAABB.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\LowLevelDynamics.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysX.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXCharacterKinematic.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXCommon.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXCooking.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXExtensions.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXFoundation.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXPvdSDK.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXTask.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXVehicle.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\SceneQuery.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\SimulationController.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='checked|x64'">C:\Users\13533\Downloads\PhysX-4.1\physx\compiler\vc16win64\sdk_source_bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='checked|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='profile|x64'">Building Custom Rule C:/Users/13533/Downloads/PhysX-4.1/physx/source/compiler/cmake/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='profile|x64'">setlocal
+C:\Users\13533\Downloads\cmake-3.23.0-windows-x86_64\bin\cmake.exe -SC:/Users/13533/Downloads/PhysX-4.1/physx/compiler/public -BC:/Users/13533/Downloads/PhysX-4.1/physx/compiler/vc16win64 --check-stamp-file C:/Users/13533/Downloads/PhysX-4.1/physx/compiler/vc16win64/sdk_source_bin/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='profile|x64'">C:\Users\13533\Downloads\PhysX-4.1\externals\cmakemodules\GetCompilerAndPlatform.cmake;C:\Users\13533\Downloads\PhysX-4.1\externals\cmakemodules\NvidiaBuildOptions.cmake;C:\Users\13533\Downloads\PhysX-4.1\externals\cmakemodules\SetOutputPaths.cmake;C:\Users\13533\Downloads\PhysX-4.1\externals\cmakemodules\template\PxIncludeTemplate.h;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\FastXml.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\LowLevel.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\LowLevelAABB.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\LowLevelDynamics.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysX.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXCharacterKinematic.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXCommon.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXCooking.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXExtensions.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXFoundation.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXPvdSDK.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXTask.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXVehicle.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\SceneQuery.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\SimulationController.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\CMakeLists.txt;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\FastXml.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\LowLevel.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\LowLevelAABB.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\LowLevelDynamics.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysX.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXCharacterKinematic.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXCommon.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXCooking.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXExtensions.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXFoundation.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXPvdSDK.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXTask.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXVehicle.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\SceneQuery.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\SimulationController.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='profile|x64'">C:\Users\13533\Downloads\PhysX-4.1\physx\compiler\vc16win64\sdk_source_bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='profile|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='release|x64'">Building Custom Rule C:/Users/13533/Downloads/PhysX-4.1/physx/source/compiler/cmake/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='release|x64'">setlocal
+C:\Users\13533\Downloads\cmake-3.23.0-windows-x86_64\bin\cmake.exe -SC:/Users/13533/Downloads/PhysX-4.1/physx/compiler/public -BC:/Users/13533/Downloads/PhysX-4.1/physx/compiler/vc16win64 --check-stamp-file C:/Users/13533/Downloads/PhysX-4.1/physx/compiler/vc16win64/sdk_source_bin/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='release|x64'">C:\Users\13533\Downloads\PhysX-4.1\externals\cmakemodules\GetCompilerAndPlatform.cmake;C:\Users\13533\Downloads\PhysX-4.1\externals\cmakemodules\NvidiaBuildOptions.cmake;C:\Users\13533\Downloads\PhysX-4.1\externals\cmakemodules\SetOutputPaths.cmake;C:\Users\13533\Downloads\PhysX-4.1\externals\cmakemodules\template\PxIncludeTemplate.h;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\FastXml.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\LowLevel.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\LowLevelAABB.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\LowLevelDynamics.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysX.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXCharacterKinematic.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXCommon.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXCooking.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXExtensions.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXFoundation.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXPvdSDK.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXTask.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\PhysXVehicle.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\SceneQuery.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\SimulationController.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\CMakeLists.txt;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\FastXml.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\LowLevel.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\LowLevelAABB.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\LowLevelDynamics.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysX.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXCharacterKinematic.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXCommon.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXCooking.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXExtensions.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXFoundation.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXPvdSDK.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXTask.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\PhysXVehicle.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\SceneQuery.cmake;C:\Users\13533\Downloads\PhysX-4.1\physx\source\compiler\cmake\windows\SimulationController.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='release|x64'">C:\Users\13533\Downloads\PhysX-4.1\physx\compiler\vc16win64\sdk_source_bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='release|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\api\include\PxsMaterialCore.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\api\include\PxsMaterialManager.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\api\include\PxvConfig.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\api\include\PxvDynamics.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\api\include\PxvGeometry.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\api\include\PxvGlobals.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\api\include\PxvManager.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\api\include\PxvSimStats.h" />
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\api\src\px_globals.cpp" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\collision\PxcContactMethodImpl.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\pipeline\PxcConstraintBlockStream.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\pipeline\PxcContactCache.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\pipeline\PxcMaterialMethodImpl.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\pipeline\PxcNpBatch.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\pipeline\PxcNpCache.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\pipeline\PxcNpCacheStreamPair.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\pipeline\PxcNpContactPrepShared.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\pipeline\PxcNpMemBlockPool.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\pipeline\PxcNpThreadContext.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\pipeline\PxcNpWorkUnit.h" />
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\src\pipeline\PxcContactCache.cpp" />
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\src\pipeline\PxcContactMethodImpl.cpp" />
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\src\pipeline\PxcMaterialHeightField.cpp" />
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\src\pipeline\PxcMaterialMesh.cpp" />
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\src\pipeline\PxcMaterialMethodImpl.cpp" />
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\src\pipeline\PxcMaterialShape.cpp" />
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\src\pipeline\PxcNpBatch.cpp" />
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\src\pipeline\PxcNpCacheStreamPair.cpp" />
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\src\pipeline\PxcNpContactPrepShared.cpp" />
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\src\pipeline\PxcNpMemBlockPool.cpp" />
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\src\pipeline\PxcNpThreadContext.cpp" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\utils\PxcScratchAllocator.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\common\include\utils\PxcThreadCoherentCache.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include\PxsBodySim.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include\PxsCCD.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include\PxsContactManager.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include\PxsContactManagerState.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include\PxsContext.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include\PxsDefaultMemoryManager.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include\PxsHeapMemoryAllocator.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include\PxsIncrementalConstraintPartitioning.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include\PxsIslandManagerTypes.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include\PxsIslandSim.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include\PxsIslandNodeIndex.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include\PxsKernelWrangler.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include\PxsMaterialCombiner.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include\PxsMemoryManager.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include\PxsNphaseImplementationContext.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include\PxsRigidBody.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include\PxsShapeSim.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include\PxsSimpleIslandManager.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include\PxsSimulationController.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include\PxsTransformCache.h" />
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\include\PxvNphaseImplementationContext.h" />
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\src\PxsCCD.cpp" />
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\src\PxsContactManager.cpp" />
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\src\PxsContext.cpp" />
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\src\PxsDefaultMemoryManager.cpp" />
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\src\PxsIslandSim.cpp" />
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\src\PxsMaterialCombiner.cpp" />
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\src\PxsNphaseImplementationContext.cpp" />
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\source\lowlevel\software\src\PxsSimpleIslandManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\13533\Downloads\PhysX-4.1\physx\compiler\vc16win64\ZERO_CHECK.vcxproj">
+      <Project>{DB5BFEC3-7221-3984-A59F-1FBE83BEE1EF}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

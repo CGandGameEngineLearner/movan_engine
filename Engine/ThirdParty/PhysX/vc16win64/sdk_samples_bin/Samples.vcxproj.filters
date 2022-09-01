@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplebridges\SampleBridges.cpp">
+      <Filter>SampleBridges</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplebridges\SampleBridgesCCT.cpp">
+      <Filter>SampleBridges</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplecustomgravity\Planet.cpp">
+      <Filter>SampleCustomGravity</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplecustomgravity\SampleCustomGravity.cpp">
+      <Filter>SampleCustomGravity</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplecustomgravity\SampleCustomGravity_CCT.cpp">
+      <Filter>SampleCustomGravity</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplecustomgravity\SampleCustomGravityBuilder.cpp">
+      <Filter>SampleCustomGravity</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplecustomgravity\SampleCustomGravityCameraController.cpp">
+      <Filter>SampleCustomGravity</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplecustomgravity\SampleCustomGravityFilterShader.cpp">
+      <Filter>SampleCustomGravity</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplehelloworld\SampleHelloWorld.cpp">
+      <Filter>SampleHelloWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplelargeworld\ChunkLoader.cpp">
+      <Filter>SampleLargeWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplelargeworld\MeshBuilder.cpp">
+      <Filter>SampleLargeWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplelargeworld\SampleLargeWorld.cpp">
+      <Filter>SampleLargeWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplelargeworld\SampleLargeWorldCCT.cpp">
+      <Filter>SampleLargeWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplenorthpole\SampleNorthPole.cpp">
+      <Filter>SampleNorthPole</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplenorthpole\SampleNorthPoleBuilder.cpp">
+      <Filter>SampleNorthPole</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplenorthpole\SampleNorthPoleCameraController.cpp">
+      <Filter>SampleNorthPole</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplenorthpole\SampleNorthPoleCCT.cpp">
+      <Filter>SampleNorthPole</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplenorthpole\SampleNorthPoleDynamics.cpp">
+      <Filter>SampleNorthPole</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplenorthpole\SampleNorthPoleFilterShader.cpp">
+      <Filter>SampleNorthPole</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplesubmarine\Crab.cpp">
+      <Filter>SampleSubmarine</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplesubmarine\SampleSubmarine.cpp">
+      <Filter>SampleSubmarine</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplevehicle\SampleVehicle.cpp">
+      <Filter>SampleVehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplevehicle\SampleVehicleDebugRender.cpp">
+      <Filter>SampleVehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplevehicle\SampleVehicleTerrain.cpp">
+      <Filter>SampleVehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplevehicle\SampleVehicle_CameraController.cpp">
+      <Filter>SampleVehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplevehicle\SampleVehicle_ControlInputs.cpp">
+      <Filter>SampleVehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplevehicle\SampleVehicle_GameLogic.cpp">
+      <Filter>SampleVehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplevehicle\SampleVehicle_SceneQuery.cpp">
+      <Filter>SampleVehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplevehicle\SampleVehicle_VehicleController.cpp">
+      <Filter>SampleVehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplevehicle\SampleVehicle_VehicleCooking.cpp">
+      <Filter>SampleVehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplevehicle\SampleVehicle_VehicleManager.cpp">
+      <Filter>SampleVehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplevehicle\SampleVehicle_WheelQueryResults.cpp">
+      <Filter>SampleVehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplecctsharedcode\KinematicPlatform.cpp">
+      <Filter>CCTShared</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplecctsharedcode\SampleCCTActor.cpp">
+      <Filter>CCTShared</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplecctsharedcode\SampleCCTCameraController.cpp">
+      <Filter>CCTShared</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplecctsharedcode\SampleCCTJump.cpp">
+      <Filter>CCTShared</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplebridges\SampleBridges.h">
+      <Filter>SampleBridges</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplebridges\SampleBridgesInputEventIds.h">
+      <Filter>SampleBridges</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplebridges\SampleBridgesSettings.h">
+      <Filter>SampleBridges</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplecustomgravity\Planet.h">
+      <Filter>SampleCustomGravity</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplecustomgravity\SampleCustomGravity.h">
+      <Filter>SampleCustomGravity</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplecustomgravity\SampleCustomGravityCameraController.h">
+      <Filter>SampleCustomGravity</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplecustomgravity\SampleCustomGravityInputEventIds.h">
+      <Filter>SampleCustomGravity</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplehelloworld\SampleHelloWorld.h">
+      <Filter>SampleHelloWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplelargeworld\ChunkLoader.h">
+      <Filter>SampleLargeWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplelargeworld\MeshBuilder.h">
+      <Filter>SampleLargeWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplelargeworld\SampleLargeWorld.h">
+      <Filter>SampleLargeWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplelargeworld\SampleLargeWorldInputEventIds.h">
+      <Filter>SampleLargeWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplenorthpole\SampleNorthPole.h">
+      <Filter>SampleNorthPole</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplenorthpole\SampleNorthPoleCameraController.h">
+      <Filter>SampleNorthPole</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplenorthpole\SampleNorthPoleInputEventIds.h">
+      <Filter>SampleNorthPole</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplesubmarine\Crab.h">
+      <Filter>SampleSubmarine</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplesubmarine\SampleSubmarine.h">
+      <Filter>SampleSubmarine</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplesubmarine\SampleSubmarineInputEventIds.h">
+      <Filter>SampleSubmarine</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplesubmarine\SubmarineCameraController.h">
+      <Filter>SampleSubmarine</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplevehicle\SampleVehicle.h">
+      <Filter>SampleVehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplevehicle\SampleVehicleInputEventIds.h">
+      <Filter>SampleVehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplevehicle\SampleVehicle_CameraController.h">
+      <Filter>SampleVehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplevehicle\SampleVehicle_ControlInputs.h">
+      <Filter>SampleVehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplevehicle\SampleVehicle_GameLogic.h">
+      <Filter>SampleVehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplevehicle\SampleVehicle_SceneQuery.h">
+      <Filter>SampleVehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplevehicle\SampleVehicle_VehicleController.h">
+      <Filter>SampleVehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplevehicle\SampleVehicle_VehicleCooking.h">
+      <Filter>SampleVehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplevehicle\SampleVehicle_VehicleManager.h">
+      <Filter>SampleVehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplevehicle\SampleVehicle_WheelQueryResults.h">
+      <Filter>SampleVehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplecctsharedcode\KinematicPlatform.h">
+      <Filter>CCTShared</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplecctsharedcode\SampleCCTActor.h">
+      <Filter>CCTShared</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplecctsharedcode\SampleCCTCameraController.h">
+      <Filter>CCTShared</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\samplecctsharedcode\SampleCCTJump.h">
+      <Filter>CCTShared</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\13533\Downloads\PhysX-4.1\physx\samples\compiler\cmake\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CCTShared">
+      <UniqueIdentifier>{D7B75C18-B2E6-33BA-90AD-7A7AA2C0FFA0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SampleBridges">
+      <UniqueIdentifier>{AC080DF3-DF96-3AC2-8A70-108062D1A9BF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SampleCustomGravity">
+      <UniqueIdentifier>{DFC1873E-27BA-3452-BAD5-6CAEB63EBDD0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SampleHelloWorld">
+      <UniqueIdentifier>{7653E56F-EEA6-37C2-9C3D-ED14307729EA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SampleLargeWorld">
+      <UniqueIdentifier>{F7528E1B-3C57-376F-8D03-56AD786DD2F9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SampleNorthPole">
+      <UniqueIdentifier>{8E16082F-CE31-36E3-855B-8FC2778B51AC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SampleSubmarine">
+      <UniqueIdentifier>{BB2FB9FA-A5C7-3189-BF41-2AA2D16A0760}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SampleVehicle">
+      <UniqueIdentifier>{66E74EBD-E2D0-39A0-9918-4A8D0E1B50C4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
