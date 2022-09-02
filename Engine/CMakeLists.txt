@@ -1,4 +1,5 @@
-﻿project ("Engine")
+﻿
+project ("Engine")
 
 add_subdirectory("ThirdParty")
 FOREACH(subdir ${SUBDIRS})
@@ -14,6 +15,5 @@ source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}" FILES ${HEADER_FILES} ${SOURCE_F
 
 
 
-add_executable (Engine "Engine.h" "Engine.cpp" ${HEADER_FILES} ${SOURCE_FILES}  "Source/Runtime/Core/Meta/json.h" "Source/Runtime/Core/Meta/json.h")
-
+add_executable (Engine "main.h" "main.cpp" ${HEADER_FILES} ${SOURCE_FILES}  "Source/Runtime/Core/Meta/json.h" "Source/Runtime/Core/Meta/json.h")
 
