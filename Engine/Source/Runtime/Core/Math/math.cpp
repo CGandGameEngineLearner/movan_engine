@@ -31,4 +31,19 @@ namespace Movan
 		return angleunits;
 	}
 
+	float Math::radiansToAngleUnits(float radians)
+	{
+		if (k_AngleUnit == AngleUnit::AU_DEGREE)
+			return radians * Math_fRad2Deg;
+		
+		return radians;
+	}
+
+	float Math::angleUnitsToDegrees(float angleunits)
+	{
+		if (k_AngleUnit == AngleUnit::AU_RADIAN)
+			return angleunits * Math_fRad2Deg;
+
+		return angleunits;
+	}
 }
