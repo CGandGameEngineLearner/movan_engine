@@ -5,4 +5,10 @@
 #include <cassert>
 #include <cmath>
 
+#include <cassert>
+#include <cmath>
 
+namespace Movan
+{
+
+}
