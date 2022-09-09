@@ -2,7 +2,7 @@
 namespace Utils
 {
     template<typename A, typename B>
-    bool rangeEqual(A startA, A endA, B startB, B endB)
+    bool rangeEqual(A startA, A endA, B startB, B endB)//检查是否相同
     {
         while (startA != endA && startB != endB)
         {
