@@ -25,18 +25,18 @@ public:
     void generateFiles(void);
 
 private:
-    std::string m_project_input_file;
+    std::string project_input_file_;
 
-    std::vector<std::string> m_work_paths;
-    std::string              m_module_name;
-    std::string              m_sys_include;
-    std::string              m_source_include_file_name;
+    std::vector<std::string> work_paths_;
+    std::string              module_name_;
+    std::string              sys_include_;
+    std::string              source_include_file_name_;
 
-    CXIndex           m_index;
-    CXTranslationUnit m_translation_unit;
+    CXIndex           index_;
+    CXTranslationUnit translation_unit_;
 
-    std::unordered_map<std::string, std::string>  m_type_table;
-    std::unordered_map<std::string, SchemaMoudle> m_schema_modules;
+    std::unordered_map<std::string, std::string>  type_table_;
+    std::unordered_map<std::string, SchemaMoudle> schema_modules_;
 
     std::vector<const char*>                    arguments = { {"-x",
                                            "c++",
@@ -49,9 +49,9 @@ private:
                                            "-M",
                                            "-ferror-limit=0",
                                            "-o clangLog.txt"} };
-    std::vector<Generator::GeneratorInterface*> m_generators;
+    std::vector<Generator::GeneratorInterface*> generators_;
 
-    bool m_is_show_errors;
+    bool is_show_errors_;
 
 private:
     bool        parseProject(void);

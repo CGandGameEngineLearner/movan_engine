@@ -13,8 +13,8 @@ namespace Generator
             std::string                             root_path,
             std::function<std::string(std::string)> get_include_func
         ) :
-            m_out_path(out_path),
-            m_root_path(root_path), m_get_include_func(get_include_func)
+            out_path_(out_path),
+            root_path_(root_path), get_include_func_(get_include_func)
         {}
         virtual int  generate(std::string path, SchemaMoudle schema) = 0;
         virtual void finish() {};
@@ -27,8 +27,8 @@ namespace Generator
         virtual void        genClassFieldRenderData(std::shared_ptr<Class> class_temp, Mustache::data& feild_defs);
         virtual std::string processFileName(std::string path) = 0;
 
-        std::string                             m_out_path{ "gen_src" };
-        std::string                             m_root_path;
-        std::function<std::string(std::string)> m_get_include_func;
+        std::string                             out_path_{ "gen_src" };
+        std::string                             root_path_;
+        std::function<std::string(std::string)> get_include_func_;
     };
 } // namespace Generator

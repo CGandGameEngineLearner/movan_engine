@@ -15,3 +15,4 @@ namespace Utils
 
         return (startA == endA) && (startB == endB);
     }
+}

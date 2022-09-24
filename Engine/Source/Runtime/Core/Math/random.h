@@ -18,24 +18,24 @@ namespace Movan
     {
 
     private:
-        RandomEngine m_engine;
+        RandomEngine engine_;
 
     public:
         template<typename... Params>
-        explicit RandomNumberGenerator(Params&&... params) : m_engine(std::forward<Params>(params)...)
+        explicit RandomNumberGenerator(Params&&... params) : engine_(std::forward<Params>(params)...)
         {}
 
         template<typename... Params>
         void seed(Params&&... seeding)
         {
-            m_engine.seed(std::forward<Params>(seeding)...);
+            engine_.seed(std::forward<Params>(seeding)...);
         }
 
         template<typename DistributionFunc, typename... Params>
         typename DistributionFunc::result_type distribution(Params&&... params)
         {
             DistributionFunc dist(std::forward<Params>(params)...);
-            return dist(m_engine);
+            return dist(engine_);
         }
 
         template<typename NumericType>
@@ -65,7 +65,7 @@ namespace Movan
             // using ResultType = typename DistributionFunc::result_type;
 
             DistributionFunc dist(std::forward<Params>(params)...);
-            return std::generate(std::begin(range), std::end(range), [&] { return dist(m_engine); });
+            return std::generate(std::begin(range), std::end(range), [&] { return dist(engine_); });
         }
     };
 
@@ -77,25 +77,25 @@ namespace Movan
         using ResultType = typename DistributionFunc::result_type;
 
     private:
-        RandomEngine      m_engine;
-        DistributionFunc* m_dist = nullptr;
+        RandomEngine      engine_;
+        DistributionFunc* dist_ = nullptr;
 
     public:
         template<typename... Params>
-        explicit DistRandomNumberGenerator(SeedType&& seeding, Params&&...  /*params*/) : m_engine(seeding)
+        explicit DistRandomNumberGenerator(SeedType&& seeding, Params&&...  /*params*/) : engine_(seeding)
         {
             // m_dist = CHAOS_NEW_T(DistributionFunc)(std::forward<Params>(params)...);
         }
 
-        ~DistRandomNumberGenerator() { CHAOS_DELETE_T(m_dist); }
+        ~DistRandomNumberGenerator() { CHAOS_DELETE_T(dist_); }
 
         template<typename... Params>
         void seed(Params&&... params)
         {
-            m_engine.seed(std::forward<Params>(params)...);
+            engine_.seed(std::forward<Params>(params)...);
         }
 
-        ResultType next() { return (*m_dist)(m_engine); }
+        ResultType next() { return (*dist_)(engine_); }
     };
 
     using DefaultRNG = RandomNumberGenerator<std::mt19937>;

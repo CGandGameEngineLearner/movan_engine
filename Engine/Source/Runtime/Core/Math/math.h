@@ -1,10 +1,11 @@
 #pragma once
 
-
+#include "random.h"
 
 #include <algorithm>
 #include <cmath>
 #include <limits>
+#include <iostream>
 
 #define CMP(x, y) (fabsf(x - y) < FLT_EPSILON * fmaxf(1.0f, fmaxf(fabsf(x), fabsf(y))))
 
@@ -39,66 +40,66 @@ namespace Movan
     */
     class Radian
     {
-        float m_rad_;
+        float rad_;
 
     public:
-        explicit Radian(float r = 0) : m_rad_(r) {}
+        explicit Radian(float r = 0) : rad_(r) {}
         explicit Radian(const Degree& d);
         Radian& operator=(float f)
         {
-            m_rad_ = f;
+            rad_ = f;
             return *this;
         }
         Radian& operator=(const Degree& d);
 
-        float valueRadians() const { return m_rad_; }
+        float valueRadians() const { return rad_; }
         float valueDegrees() const; // see bottom of this file
         float valueAngleUnits() const;
 
-        void setValue(float f) { m_rad_ = f; }
+        void setValue(float f) { rad_ = f; }
 
         const Radian& operator+() const { return *this; }
-        Radian        operator+(const Radian& r) const { return Radian(m_rad_ + r.m_rad_); }
+        Radian        operator+(const Radian& r) const { return Radian(rad_ + r.rad_); }
         Radian        operator+(const Degree& d) const;
         Radian& operator+=(const Radian& r)
         {
-            m_rad_ += r.m_rad_;
+            rad_ += r.rad_;
             return *this;
         }
         Radian& operator+=(const Degree& d);
-        Radian  operator-() const { return Radian(-m_rad_); }
-        Radian  operator-(const Radian& r) const { return Radian(m_rad_ - r.m_rad_); }
+        Radian  operator-() const { return Radian(-rad_); }
+        Radian  operator-(const Radian& r) const { return Radian(rad_ - r.rad_); }
         Radian  operator-(const Degree& d) const;
         Radian& operator-=(const Radian& r)
         {
-            m_rad_ -= r.m_rad_;
+            rad_ -= r.rad_;
             return *this;
         }
         Radian& operator-=(const Degree& d);
-        Radian  operator*(float f) const { return Radian(m_rad_ * f); }
-        Radian  operator*(const Radian& f) const { return Radian(m_rad_ * f.m_rad_); }
+        Radian  operator*(float f) const { return Radian(rad_ * f); }
+        Radian  operator*(const Radian& f) const { return Radian(rad_ * f.rad_); }
         Radian& operator*=(float f)
         {
-            m_rad_ *= f;
+            rad_ *= f;
             return *this;
         }
-        Radian  operator/(float f) const { return Radian(m_rad_ / f); }
+        Radian  operator/(float f) const { return Radian(rad_ / f); }
         Radian& operator/=(float f)
         {
-            m_rad_ /= f;
+            rad_ /= f;
             return *this;
         }
 
-        bool operator<(const Radian& r) const { return m_rad_ < r.m_rad_; }
-        bool operator<=(const Radian& r) const { return m_rad_ <= r.m_rad_; }
-        bool operator==(const Radian& r) const { return m_rad_ == r.m_rad_; }
-        bool operator!=(const Radian& r) const { return m_rad_ != r.m_rad_; }
-        bool operator>=(const Radian& r) const { return m_rad_ >= r.m_rad_; }
-        bool operator>(const Radian& r) const { return m_rad_ > r.m_rad_; }
+        bool operator<(const Radian& r) const { return rad_ < r.rad_; }
+        bool operator<=(const Radian& r) const { return rad_ <= r.rad_; }
+        bool operator==(const Radian& r) const { return rad_ == r.rad_; }
+        bool operator!=(const Radian& r) const { return rad_ != r.rad_; }
+        bool operator>=(const Radian& r) const { return rad_ >= r.rad_; }
+        bool operator>(const Radian& r) const { return rad_ > r.rad_; }
 
         void print()
         {
-            std::printf("%f\n",m_rad_);
+            std::cout << "rad:" << rad_ << std::endl;
         }
     };
 
@@ -109,77 +110,77 @@ namespace Movan
     */
     class Degree
     {
-        float m_deg; //如果这里报错了，请用在前面 define/typedef 'float'| if you get an error here - make sure to define/typedef 'float' first
+        float deg_; //如果这里报错了，请用在前面 define/typedef 'float'| if you get an error here - make sure to define/typedef 'float' first
 
     public:
-        explicit Degree(float d = 0) : m_deg(d) {}
-        explicit Degree(const Radian& r) : m_deg(r.valueDegrees()) {}
+        explicit Degree(float d = 0) : deg_(d) {}
+        explicit Degree(const Radian& r) : deg_(r.valueDegrees()) {}
         Degree& operator=(float f)
         {
-            m_deg = f;
+            deg_ = f;
             return *this;
         }
         Degree& operator=(const Degree& d) = default;
         Degree& operator=(const Radian& r)
         {
-            m_deg = r.valueDegrees();
+            deg_ = r.valueDegrees();
             return *this;
         }
 
-        float valueDegrees() const { return m_deg; }
+        float valueDegrees() const { return deg_; }
         float valueRadians() const; // see bottom of this file
         float valueAngleUnits() const;
 
         const Degree& operator+() const { return *this; }
-        Degree        operator+(const Degree& d) const { return Degree(m_deg + d.m_deg); }
-        Degree        operator+(const Radian& r) const { return Degree(m_deg + r.valueDegrees()); }
+        Degree        operator+(const Degree& d) const { return Degree(deg_ + d.deg_); }
+        Degree        operator+(const Radian& r) const { return Degree(deg_ + r.valueDegrees()); }
         Degree& operator+=(const Degree& d)
         {
-            m_deg += d.m_deg;
+            deg_ += d.deg_;
             return *this;
         }
         Degree& operator+=(const Radian& r)
         {
-            m_deg += r.valueDegrees();
+            deg_ += r.valueDegrees();
             return *this;
         }
-        Degree  operator-() const { return Degree(-m_deg); }
-        Degree  operator-(const Degree& d) const { return Degree(m_deg - d.m_deg); }
-        Degree  operator-(const Radian& r) const { return Degree(m_deg - r.valueDegrees()); }
+        Degree  operator-() const { return Degree(-deg_); }
+        Degree  operator-(const Degree& d) const { return Degree(deg_ - d.deg_); }
+        Degree  operator-(const Radian& r) const { return Degree(deg_ - r.valueDegrees()); }
         Degree& operator-=(const Degree& d)
         {
-            m_deg -= d.m_deg;
+            deg_ -= d.deg_;
             return *this;
         }
         Degree& operator-=(const Radian& r)
         {
-            m_deg -= r.valueDegrees();
+            deg_ -= r.valueDegrees();
             return *this;
         }
-        Degree  operator*(float f) const { return Degree(m_deg * f); }
-        Degree  operator*(const Degree& f) const { return Degree(m_deg * f.m_deg); }
+        Degree  operator*(float f) const { return Degree(deg_ * f); }
+        Degree  operator*(const Degree& f) const { return Degree(deg_ * f.deg_); }
         Degree& operator*=(float f)
         {
-            m_deg *= f;
+            deg_ *= f;
             return *this;
         }
-        Degree  operator/(float f) const { return Degree(m_deg / f); }
+        Degree  operator/(float f) const { return Degree(deg_ / f); }
         Degree& operator/=(float f)
         {
-            m_deg /= f;
+            deg_ /= f;
             return *this;
         }
 
-        bool operator<(const Degree& d) const { return m_deg < d.m_deg; }
-        bool operator<=(const Degree& d) const { return m_deg <= d.m_deg; }
-        bool operator==(const Degree& d) const { return m_deg == d.m_deg; }
-        bool operator!=(const Degree& d) const { return m_deg != d.m_deg; }
-        bool operator>=(const Degree& d) const { return m_deg >= d.m_deg; }
-        bool operator>(const Degree& d) const { return m_deg > d.m_deg; }
+        bool operator<(const Degree& d) const { return deg_ < d.deg_; }
+        bool operator<=(const Degree& d) const { return deg_ <= d.deg_; }
+        bool operator==(const Degree& d) const { return deg_ == d.deg_; }
+        bool operator!=(const Degree& d) const { return deg_ != d.deg_; }
+        bool operator>=(const Degree& d) const { return deg_ >= d.deg_; }
+        bool operator>(const Degree& d) const { return deg_ > d.deg_; }
 
         void print()
         {
-            std::printf("%f\n", m_deg);
+            std::cout << "deg:" << deg_ << std::endl;
         }
     };
 
@@ -191,18 +192,18 @@ namespace Movan
     */
     class Angle
     {
-        float m_ang;
+        float ang_;
 
     public:
-        explicit Angle(float angle) : m_ang(angle) {}
-        Angle() { m_ang = 0; }
+        explicit Angle(float angle) : ang_(angle) {}
+        Angle() { ang_ = 0; }
 
         explicit operator Radian() const;
         explicit operator Degree() const;
 
         void print()
         {
-            std::printf("%f\n", m_ang);
+            std::cout<<"ang:"<<ang_ << std::endl;
         }
     };
 
@@ -289,36 +290,36 @@ namespace Movan
 
     // these functions could not be defined within the class definition of class
     // Radian because they required class Degree to be defined
-    inline Radian::Radian(const Degree& d) : m_rad_(d.valueRadians()) {}
+    inline Radian::Radian(const Degree& d) : rad_(d.valueRadians()) {}
     inline Radian& Radian::operator=(const Degree& d)
     {
-        m_rad_ = d.valueRadians();
+        rad_ = d.valueRadians();
         return *this;
     }
-    inline Radian Radian::operator+(const Degree& d) const { return Radian(m_rad_ + d.valueRadians()); }
+    inline Radian Radian::operator+(const Degree& d) const { return Radian(rad_ + d.valueRadians()); }
     inline Radian& Radian::operator+=(const Degree& d)
     {
-        m_rad_ += d.valueRadians();
+        rad_ += d.valueRadians();
         return *this;
     }
-    inline Radian Radian::operator-(const Degree& d) const { return Radian(m_rad_ - d.valueRadians()); }
+    inline Radian Radian::operator-(const Degree& d) const { return Radian(rad_ - d.valueRadians()); }
     inline Radian& Radian::operator-=(const Degree& d)
     {
-        m_rad_ -= d.valueRadians();
+        rad_ -= d.valueRadians();
         return *this;
     }
 
-    inline float Radian::valueDegrees() const { return Math::m_radiansToDegrees(m_rad_); }
+    inline float Radian::valueDegrees() const { return Math::radiansToDegrees(rad_); }
 
-    inline float Radian::valueAngleUnits() const { return Math::m_radiansToAngleUnits(m_rad_); }
+    inline float Radian::valueAngleUnits() const { return Math::radiansToAngleUnits(rad_); }
 
-    inline float Degree::valueRadians() const { return Math::degreesToRadians(m_deg); }
+    inline float Degree::valueRadians() const { return Math::degreesToRadians(deg_); }
 
-    inline float Degree::valueAngleUnits() const { return Math::degreesToAngleUnits(m_deg); }
+    inline float Degree::valueAngleUnits() const { return Math::degreesToAngleUnits(deg_); }
 
-    inline Angle::operator Radian() const { return Radian(Math::angleUnitsToRadians(m_ang)); }
+    inline Angle::operator Radian() const { return Radian(Math::angleUnitsToRadians(ang_)); }
 
-    inline Angle::operator Degree() const { return Degree(Math::angleUnitsToDegrees(m_ang)); }
+    inline Angle::operator Degree() const { return Degree(Math::angleUnitsToDegrees(ang_)); }
 
     inline Radian operator*(float a, const Radian& b) { return Radian(a * b.valueRadians()); }
 

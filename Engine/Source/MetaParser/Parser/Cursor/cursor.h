@@ -26,5 +26,5 @@ public:
     void visitChildren(Visitor visitor, void* data = nullptr);
 
 private:
-    CXCursor m_handle;
+    CXCursor handle_;
 };

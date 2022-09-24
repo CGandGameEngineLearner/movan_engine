@@ -22,5 +22,5 @@ public:
     bool IsConst(void) const;
 
 private:
-    CXType m_handle;
+    CXType handle_;
 };
