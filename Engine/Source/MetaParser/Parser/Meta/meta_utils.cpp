@@ -19,5 +19,6 @@ namespace Utils
 		return type.GetDisplayName();
 	}
 
-	std::string getTypeNameWithoutNamespace(const )
+	//std::string getTypeNameWithoutNamespace(const )
+
 }
