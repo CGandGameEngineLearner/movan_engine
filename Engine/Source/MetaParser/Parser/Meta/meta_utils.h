@@ -8,6 +8,10 @@ namespace Utils
 
     void toString(const CXString& str, std::string& output);
 
+    std::string replace(std::string& source_string, std::string sub_string, const std::string new_string);
+
+    std::string replace(std::string& source_string, char taget_char, const char new_char);
+
     std::string getQualifiedName(const CursorType& type);
 
     std::string getQualifiedName(const std::string& display_name, const Namespace& current_namespace);
@@ -16,7 +20,9 @@ namespace Utils
 
     std::string formatQualifiedName(std::string& source_string);
 
-    fs::path makeRelativePath(const fs::path& from, const fs::path& to);
+    unsigned long formatPathString(const std::string& path_string, std::string& out_string);
+
+    fs::path makeRelativePath(const fs::path& from, const fs::path& to);//设置相对路径
 
     void fatalError(const std::string& error);
 
@@ -35,10 +41,6 @@ namespace Utils
 
     std::string getStringWithoutQuot(std::string input);
 
-    std::string replace(std::string& source_string, std::string sub_string, const std::string new_string);
-
-    std::string replace(std::string& source_string, char taget_char, const char new_char);
-
     std::string toUpper(std::string& source_string);
 
     std::string join(std::vector<std::string> context_list, std::string separator);
@@ -51,7 +53,7 @@ namespace Utils
 
     void replaceAll(std::string& resource_str, std::string sub_str, std::string new_str);
 
-    unsigned long formatPathString(const std::string& path_string, std::string& out_string);
+    
 } // namespace Utils
 
 #include "meta_utils.hpp"
