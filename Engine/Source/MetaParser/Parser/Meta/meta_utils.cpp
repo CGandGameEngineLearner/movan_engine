@@ -53,7 +53,7 @@ namespace Utils
 		return source_string;
 	}
 
-	unsigned long formatPathString(const std::string& path_string, std::string& out_string)
+	void formatPathString(const std::string& path_string, std::string& out_string)
 	{
 		unsigned int uiRet = 0;
 		auto         local_path_string = path_string;
@@ -86,12 +86,29 @@ namespace Utils
 			out_string.append(out_sub_string[i] + "/");
 		}
 		out_string.append(out_sub_string[out_sub_string.size() - 1]);
-		return 0;
+		
 	}
 
 	fs::path makeRelativePath(const fs::path& from, const fs::path& to)
 	{
+		std::string form_complete_string;
+		std::string to_complete_string;
 
+		// Çå³ý
+		formatPathString(from.string(), form_complete_string);
+		formatPathString(to.string(), to_complete_string);
+
+		fs::path form_complete = form_complete_string;
+		fs::path to_complete = to_complete_string;
+
+		auto iter_from = form_complete.begin();
+		auto iter_to = to_complete.begin();
+
+		while (iter_from != form_complete.end() && iter_to != to_complete.end() && (*iter_to) == (*iter_from))
+		{
+			++iter_to;
+			++iter_from;
+		}
 	}
 	//std::string getTypeNameWithoutNamespace(const )
 
