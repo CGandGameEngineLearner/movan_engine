@@ -110,6 +110,6 @@ namespace Utils
 			++iter_from;
 		}
 	}
-	//std::string getTypeNameWithoutNamespace(const )
+	
 
 }
