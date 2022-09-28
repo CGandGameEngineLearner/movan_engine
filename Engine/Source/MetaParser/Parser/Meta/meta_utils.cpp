@@ -109,6 +109,23 @@ namespace Utils
 			++iter_to;
 			++iter_from;
 		}
+
+		fs::path final_path;
+		while (iter_from != form_complete.end())
+		{
+			final_path /= "..";
+
+			++iter_from;
+		}
+
+		while (iter_to != to_complete.end())
+		{
+			final_path /= *iter_to;
+
+			++iter_to;
+		}
+
+		return final_path;
 	}
 	
 
