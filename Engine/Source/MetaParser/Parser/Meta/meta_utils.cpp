@@ -128,6 +128,11 @@ namespace Utils
 		return final_path;
 	}
 	
+	void fatalError(const std::string& error)
+	{
+		std::cerr << "Error: " << error << std::endl;
 
+		exit(EXIT_FAILURE);
+	}
 
 }
