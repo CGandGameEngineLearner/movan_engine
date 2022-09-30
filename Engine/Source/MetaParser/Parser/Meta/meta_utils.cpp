@@ -135,4 +135,48 @@ namespace Utils
 		exit(EXIT_FAILURE);
 	}
 
+	std::vector<std::string> split(std::string input, std::string pat)
+	{
+		std::vector<std::string> ret_list;
+		while (true)
+		{
+			size_t      index = input.find(pat);
+			std::string sub_list = input.substr(0, index);
+			if (!sub_list.empty())
+			{
+
+				ret_list.push_back(sub_list);
+			}
+			input.erase(0, index + pat.size());
+			if (index == -1)
+			{
+				break;
+			}
+		}
+		return ret_list;
+	}
+
+	std::string getFileName(std::string path)
+	{
+		if (path.size() < 1)
+		{
+			return std::string();
+		}
+		std::vector<std::string> result = split(path, "/");
+		if (result.size() < 1)
+		{
+			return std::string();
+		}
+		return result[result.size() - 1];
+	}
+
+	std::string getNameWithoutFirstM(std::string& name)
+	{
+		std::string result = name;
+		if (name.size() > 2 && name[0] == 'm' && name[1] == '_')
+		{
+			result = name.substr(2);
+		}
+		return result;
+	}
 }
