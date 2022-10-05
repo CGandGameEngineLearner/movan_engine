@@ -33,5 +33,5 @@ add_executable (MovanStudio "MovanStudio.cpp" "MovanStudio.h")
 add_subdirectory("Engine")
 
 
-set_property(TARGET "Engine" PROPERTY FOLDER MovanStudio)
+#set_property(TARGET "Engine" PROPERTY FOLDER MovanStudio)
 
