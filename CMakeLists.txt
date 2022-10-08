@@ -26,7 +26,7 @@ source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}" FILES ${HEADER_FILES} ${SOURCE_F
 
 
 # 将源代码添加到此项目的可执行文件。
-add_executable (MovanStudio "MovanStudio.cpp" "MovanStudio.h")
+add_executable (MovanStudio "MovanStudio.cpp" "MovanStudio.h" "Engine/Source/Runtime/engine.h" "Engine/Source/Runtime/engine.cpp")
 
 # TODO: 如有需要，请添加测试并安装目标。
 

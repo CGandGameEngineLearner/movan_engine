@@ -53,7 +53,8 @@ namespace Utils
 
     void replaceAll(std::string& resource_str, std::string sub_str, std::string new_str);
 
-    
+    template<typename A, typename B>
+    bool rangeEqual(A startA, A endA, B startB, B endB);
 } // namespace Utils
 
 #include "meta_utils.hpp"
