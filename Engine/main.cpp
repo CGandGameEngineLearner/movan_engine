@@ -12,4 +12,5 @@ int main()
 	std::filesystem::path config_file_path = executable_path.parent_path() / "MovanEditor.ini";
 
 	Movan::MovanEngine* engine = new Movan::MovanEngine();//初始化引擎
+
 }
