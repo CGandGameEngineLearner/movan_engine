@@ -13,7 +13,8 @@ int main()
 
 	Movan::MovanEngine* engine = new Movan::MovanEngine();//初始化引擎
 
-
+	engine->startEngine(config_file_path.generic_string());
+	engine->initialize();
 
 
 }
