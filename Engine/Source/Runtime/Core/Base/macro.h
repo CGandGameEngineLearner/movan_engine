@@ -1,3 +1,4 @@
 #pragma once
 
-#include "../../../Runtime/Core/"
+#include "../../../Runtime/Core/LogSystem/log_system.h"
+#include "../../../Runtime/"
