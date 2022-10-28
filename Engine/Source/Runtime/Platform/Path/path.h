@@ -18,6 +18,7 @@ namespace Movan
             getFileExtensions(const std::filesystem::path& file_path);
 
         static const std::string getFilePureName(const std::string);
+
     };
 } // namespace Movan
 
