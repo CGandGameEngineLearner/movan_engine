@@ -1,4 +1,5 @@
 #cmake_minimum_required(VERSION 2.8)
+message(STATUS "json11 CMake")
 if (CMAKE_VERSION VERSION_LESS "3")
   project(json11 CXX)
 else()
