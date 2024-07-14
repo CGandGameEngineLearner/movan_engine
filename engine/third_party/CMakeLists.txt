@@ -1,5 +1,3 @@
-message(STATUS "ThirdParty CMake")
-
 set(third_party_folder "ThirdParty")
 
 set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
@@ -42,5 +40,4 @@ endif()
 if(NOT TARGET sol2)
     add_subdirectory(sol2-3.3.0)
 endif()
-
 

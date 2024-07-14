@@ -1,5 +1,4 @@
 #cmake_minimum_required(VERSION 2.8)
-message(STATUS "json11 CMake")
 if (CMAKE_VERSION VERSION_LESS "3")
   project(json11 CXX)
 else()
@@ -26,7 +25,7 @@ endif()
 add_library(json11 json11.cpp)
 target_include_directories(json11 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_compile_options(json11
-  PRIVATE -Wall)
+        PRIVATE -Wall)
 
 # Set warning flags, which may vary per platform
 include(CheckCXXCompilerFlag)

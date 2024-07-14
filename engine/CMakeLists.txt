@@ -1,7 +1,11 @@
 ﻿
-set(ENGINE_ROOT_DIR "${MOVAN_ROOT_DIR}/engine")
+set(ENGINE_ROOT_DIR "${MOVAN_ENGINE_ROOT_DIR}/engine")
+message(STATUS "ENGINE_ROOT_DIR=${ENGINE_ROOT_DIR}")
 set(THIRD_PARTY_DIR "${ENGINE_ROOT_DIR}/third_party")
+set(ENGINE_ASSET_DIR "/asset")
 
+set(DEPLOY_CONFIG_DIR "configs/deployment")
+set(DEVELOP_CONFIG_DIR "configs/development")
 
 option(ENABLE_PHYSICS_DEBUG_RENDERER "Enable Physics Debug Renderer" OFF)
 
@@ -41,8 +45,19 @@ else()
 endif()
 
 
+#set(SHADER_COMPILE_TARGET MovanShaderCompile)
+#add_subdirectory(shader)
 
 add_subdirectory(third_party)
 
 add_subdirectory(source/runtime)
 add_subdirectory(source/editor)
+#add_subdirectory(source/meta_parser)
+#add_subdirectory(source/test)
+
+#set(CODEGEN_TARGET "MovanPreCompile")
+#include(source/precompile/precompile.cmake)
+#set_target_properties("${CODEGEN_TARGET}" PROPERTIES FOLDER "Engine" )
+
+#add_dependencies(MovanRuntime "${CODEGEN_TARGET}")
+#add_dependencies("${CODEGEN_TARGET}" "MovanParser")
