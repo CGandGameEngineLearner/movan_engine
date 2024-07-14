@@ -46,5 +46,10 @@ target_include_directories(
         PUBLIC $<BUILD_INTERFACE:${JSON_INCLUDE}>
 )
 
+target_include_directories(
+        ${TARGET_NAME}
+        PUBLIC $<BUILD_INTERFACE:${ENGINE_ROOT_DIR}/source/runtime>
+        $<INSTALL_INTERFACE:include/${TARGET_NAME}-${PROJECT_VERSION}>
+)
 
 set(MOVAN_RUNTIME_HEADS "${HEADER_FILES}" PARENT_SCOPE)
