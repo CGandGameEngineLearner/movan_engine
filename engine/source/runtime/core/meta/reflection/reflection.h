@@ -1,9 +1,3 @@
-//
-// Created by lifesize
-// Email Address: lifesize1@qq.com
-// 反射系统
-//
-
 #pragma once
 #include "runtime/core/meta/json.h"
 
@@ -17,7 +11,7 @@ namespace Movan
 {
 
 #if defined(__REFLECTION_PARSER__)
-    #define META(...) __attribute__((annotate(#__VA_ARGS__)))
+#define META(...) __attribute__((annotate(#__VA_ARGS__)))
 #define CLASS(class_name, ...) class __attribute__((annotate(#__VA_ARGS__))) class_name
 #define STRUCT(struct_name, ...) struct __attribute__((annotate(#__VA_ARGS__))) struct_name
 //#define CLASS(class_name,...) class __attribute__((annotate(#__VA_ARGS__))) class_name:public Reflection::object
@@ -48,22 +42,22 @@ namespace Movan
 #define REGISTER_ARRAY_TO_MAP(name, value) TypeMetaRegisterinterface::registerToArrayMap(name, value);
 #define UNREGISTER_ALL TypeMetaRegisterinterface::unregisterAll();
 
-#define PICCOLO_REFLECTION_NEW(name, ...) Reflection::ReflectionPtr(#name, new name(__VA_ARGS__));
-#define PICCOLO_REFLECTION_DELETE(value) \
+#define MOVAN_REFLECTION_NEW(name, ...) Reflection::ReflectionPtr(#name, new name(__VA_ARGS__));
+#define MOVAN_REFLECTION_DELETE(value) \
     if (value) \
     { \
         delete value.operator->(); \
         value.getPtrReference() = nullptr; \
     }
-#define PICCOLO_REFLECTION_DEEP_COPY(type, dst_ptr, src_ptr) \
+#define MOVAN_REFLECTION_DEEP_COPY(type, dst_ptr, src_ptr) \
     *static_cast<type*>(dst_ptr) = *static_cast<type*>(src_ptr.getPtr());
 
 #define TypeMetaDef(class_name, ptr) \
-    Piccolo::Reflection::ReflectionInstance(Piccolo::Reflection::TypeMeta::newMetaFromName(#class_name), \
+    Movan::Reflection::ReflectionInstance(Movan::Reflection::TypeMeta::newMetaFromName(#class_name), \
                                             (class_name*)ptr)
 
 #define TypeMetaDefPtr(class_name, ptr) \
-    new Piccolo::Reflection::ReflectionInstance(Piccolo::Reflection::TypeMeta::newMetaFromName(#class_name), \
+    new Movan::Reflection::ReflectionInstance(Movan::Reflection::TypeMeta::newMetaFromName(#class_name), \
                                                 (class_name*)ptr)
 
     template<typename T, typename U, typename = void>
@@ -96,7 +90,7 @@ namespace Movan
     typedef std::function<int(Reflection::ReflectionInstance*&, void*)> GetBaseClassReflectionInstanceListFunc;
 
     typedef std::tuple<SetFuncion, GetFuncion, GetNameFuncion, GetNameFuncion, GetNameFuncion, GetBoolFunc>
-            FieldFunctionTuple;
+                                                       FieldFunctionTuple;
     typedef std::tuple<GetNameFuncion, InvokeFunction> MethodFunctionTuple;
     typedef std::tuple<GetBaseClassReflectionInstanceListFunc, ConstructorWithJson, WriteJsonByName> ClassFunctionTuple;
     typedef std::tuple<SetArrayFunc, GetArrayFunc, GetSizeFunc, GetNameFuncion, GetNameFuncion>      ArrayFunctionTuple;
@@ -141,7 +135,7 @@ namespace Movan
             FieldAccessor getFieldByName(const char* name);
             MethodAccessor getMethodByName(const char* name);
 
-            bool isValid() { return _is_valid; }
+            bool isValid() { return m_is_valid; }
 
             TypeMeta& operator=(const TypeMeta& dest);
 
@@ -149,11 +143,11 @@ namespace Movan
             TypeMeta(std::string type_name);
 
         private:
-            std::vector<FieldAccessor, std::allocator<FieldAccessor>>   _fields;
-            std::vector<MethodAccessor, std::allocator<MethodAccessor>> _methods;
-            std::string                                                 _type_name;
+            std::vector<FieldAccessor, std::allocator<FieldAccessor>>   m_fields;
+            std::vector<MethodAccessor, std::allocator<MethodAccessor>> m_methods;
+            std::string                                                 m_type_name;
 
-            bool _is_valid;
+            bool m_is_valid;
         };
 
         class FieldAccessor
@@ -187,9 +181,9 @@ namespace Movan
             FieldAccessor(FieldFunctionTuple* functions);
 
         private:
-            FieldFunctionTuple* _functions;
-            const char*         _field_name;
-            const char*         _field_type_name;
+            FieldFunctionTuple* m_functions;
+            const char*         m_field_name;
+            const char*         m_field_type_name;
         };
         class MethodAccessor
         {
@@ -208,8 +202,8 @@ namespace Movan
             MethodAccessor(MethodFunctionTuple* functions);
 
         private:
-            MethodFunctionTuple* _functions;
-            const char*          _method_name;
+            MethodFunctionTuple* m_functions;
+            const char*          m_method_name;
         };
         /**
          *  Function reflection is not implemented, so use this as an std::vector accessor
@@ -233,24 +227,24 @@ namespace Movan
             ArrayAccessor(ArrayFunctionTuple* array_func);
 
         private:
-            ArrayFunctionTuple* _func;
-            const char*         _array_type_name;
-            const char*         _element_type_name;
+            ArrayFunctionTuple* m_func;
+            const char*         m_array_type_name;
+            const char*         m_element_type_name;
         };
 
         class ReflectionInstance
         {
         public:
-            ReflectionInstance(TypeMeta meta, void* instance) : _meta(meta), _instance(instance) {}
-            ReflectionInstance() : _meta(), _instance(nullptr) {}
+            ReflectionInstance(TypeMeta meta, void* instance) : m_meta(meta), m_instance(instance) {}
+            ReflectionInstance() : m_meta(), m_instance(nullptr) {}
 
             ReflectionInstance& operator=(ReflectionInstance& dest);
 
             ReflectionInstance& operator=(ReflectionInstance&& dest);
 
         public:
-            TypeMeta _meta;
-            void*    _instance;
+            TypeMeta m_meta;
+            void*    m_instance;
         };
 
         template<typename T>
@@ -260,10 +254,10 @@ namespace Movan
             friend class ReflectionPtr;
 
         public:
-            ReflectionPtr(std::string type_name, T* instance) : _type_name(type_name), _instance(instance) {}
-            ReflectionPtr() : _type_name(), _instance(nullptr) {}
+            ReflectionPtr(std::string type_name, T* instance) : m_type_name(type_name), m_instance(instance) {}
+            ReflectionPtr() : m_type_name(), m_instance(nullptr) {}
 
-            ReflectionPtr(const ReflectionPtr& dest) : _type_name(dest._type_name), _instance(dest._instance) {}
+            ReflectionPtr(const ReflectionPtr& dest) : m_type_name(dest.m_type_name), m_instance(dest.m_instance) {}
 
             template<typename U /*, typename = typename std::enable_if<std::is_safely_castable<T*, U*>::value>::type */>
             ReflectionPtr<T>& operator=(const ReflectionPtr<U>& dest)
@@ -272,8 +266,8 @@ namespace Movan
                 {
                     return *this;
                 }
-                _type_name = dest._type_name;
-                _instance  = static_cast<T*>(dest._instance);
+                m_type_name = dest.m_type_name;
+                m_instance  = static_cast<T*>(dest.m_instance);
                 return *this;
             }
 
@@ -284,8 +278,8 @@ namespace Movan
                 {
                     return *this;
                 }
-                _type_name = dest._type_name;
-                _instance  = static_cast<T*>(dest._instance);
+                m_type_name = dest.m_type_name;
+                m_instance  = static_cast<T*>(dest.m_instance);
                 return *this;
             }
 
@@ -295,8 +289,8 @@ namespace Movan
                 {
                     return *this;
                 }
-                _type_name = dest._type_name;
-                _instance  = dest._instance;
+                m_type_name = dest.m_type_name;
+                m_instance  = dest.m_instance;
                 return *this;
             }
 
@@ -306,72 +300,73 @@ namespace Movan
                 {
                     return *this;
                 }
-                _type_name = dest._type_name;
-                _instance  = dest._instance;
+                m_type_name = dest.m_type_name;
+                m_instance  = dest.m_instance;
                 return *this;
             }
 
-            std::string getTypeName() const { return _type_name; }
+            std::string getTypeName() const { return m_type_name; }
 
-            void setTypeName(std::string name) { _type_name = name; }
+            void setTypeName(std::string name) { m_type_name = name; }
 
-            bool operator==(const T* ptr) const { return (_instance == ptr); }
+            bool operator==(const T* ptr) const { return (m_instance == ptr); }
 
-            bool operator!=(const T* ptr) const { return (_instance != ptr); }
+            bool operator!=(const T* ptr) const { return (m_instance != ptr); }
 
-            bool operator==(const ReflectionPtr<T>& rhs_ptr) const { return (_instance == rhs_ptr._instance); }
+            bool operator==(const ReflectionPtr<T>& rhs_ptr) const { return (m_instance == rhs_ptr.m_instance); }
 
-            bool operator!=(const ReflectionPtr<T>& rhs_ptr) const { return (_instance != rhs_ptr._instance); }
+            bool operator!=(const ReflectionPtr<T>& rhs_ptr) const { return (m_instance != rhs_ptr.m_instance); }
 
             template<
-                    typename T1 /*, typename = typename std::enable_if<std::is_safely_castable<T*, T1*>::value>::type*/>
+                typename T1 /*, typename = typename std::enable_if<std::is_safely_castable<T*, T1*>::value>::type*/>
             explicit operator T1*()
             {
-                return static_cast<T1*>(_instance);
+                return static_cast<T1*>(m_instance);
             }
 
             template<
-                    typename T1 /*, typename = typename std::enable_if<std::is_safely_castable<T*, T1*>::value>::type*/>
+                typename T1 /*, typename = typename std::enable_if<std::is_safely_castable<T*, T1*>::value>::type*/>
             operator ReflectionPtr<T1>()
             {
-                return ReflectionPtr<T1>(_type_name, (T1*)(_instance));
+                return ReflectionPtr<T1>(m_type_name, (T1*)(m_instance));
             }
 
             template<
-                    typename T1 /*, typename = typename std::enable_if<std::is_safely_castable<T*, T1*>::value>::type*/>
+                typename T1 /*, typename = typename std::enable_if<std::is_safely_castable<T*, T1*>::value>::type*/>
             explicit operator const T1*() const
             {
-                return static_cast<T1*>(_instance);
+                return static_cast<T1*>(m_instance);
             }
 
             template<
-                    typename T1 /*, typename = typename std::enable_if<std::is_safely_castable<T*, T1*>::value>::type*/>
+                typename T1 /*, typename = typename std::enable_if<std::is_safely_castable<T*, T1*>::value>::type*/>
             operator const ReflectionPtr<T1>() const
             {
-                return ReflectionPtr<T1>(_type_name, (T1*)(_instance));
+                return ReflectionPtr<T1>(m_type_name, (T1*)(m_instance));
             }
 
-            T* operator->() { return _instance; }
+            T* operator->() { return m_instance; }
 
-            T* operator->() const { return _instance; }
+            T* operator->() const { return m_instance; }
 
-            T& operator*() { return *(_instance); }
+            T& operator*() { return *(m_instance); }
 
-            T* getPtr() { return _instance; }
+            T* getPtr() { return m_instance; }
 
-            T* getPtr() const { return _instance; }
+            T* getPtr() const { return m_instance; }
 
-            const T& operator*() const { return *(static_cast<const T*>(_instance)); }
+            const T& operator*() const { return *(static_cast<const T*>(m_instance)); }
 
-            T*& getPtrReference() { return _instance; }
+            T*& getPtrReference() { return m_instance; }
 
-            operator bool() const { return (_instance != nullptr); }
+            operator bool() const { return (m_instance != nullptr); }
 
         private:
-            std::string _type_name {""};
-            typedef T   _type;
-            T*          _instance {nullptr};
+            std::string m_type_name {""};
+            typedef T   m_type;
+            T*          m_instance {nullptr};
         };
 
     } // namespace Reflection
+
 } // namespace Movan

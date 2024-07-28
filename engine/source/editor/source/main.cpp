@@ -1,9 +1,12 @@
-#pragma once
 #include <filesystem>
+#include <iostream>
+#include <string>
+#include <thread>
+#include <unordered_map>
 
+#include "runtime/engine.h"
 
-import MovanEngine;
-
+#include "editor/include/editor.h"
 
 // https://gcc.gnu.org/onlinedocs/cpp/Stringizing.html
 #define MOVAN_XSTR(s) MOVAN_STR(s)
@@ -12,13 +15,22 @@ import MovanEngine;
 int main(int argc, char** argv)
 {
     std::filesystem::path executable_path(argv[0]);
-
     std::filesystem::path config_file_path = executable_path.parent_path() / "MovanEditor.ini";
 
-    std::unique_ptr<Movan::MovanEngine> engine = std::make_unique<Movan::MovanEngine>();//初始化引擎
+    Movan::MovanEngine* engine = new Movan::MovanEngine();
 
     engine->startEngine(config_file_path.generic_string());
     engine->initialize();
 
+    Movan::MovanEditor* editor = new Movan::MovanEditor();
+    editor->initialize(engine);
 
+    editor->run();
+
+    editor->clear();
+
+    engine->clear();
+    engine->shutdownEngine();
+
+    return 0;
 }

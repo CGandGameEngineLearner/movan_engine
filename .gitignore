@@ -1,4 +1,5 @@
 build/
+cmake-build-debug-visual-studio
 cpm_modules/
 CPM_modules/
 CPM_*.cmake

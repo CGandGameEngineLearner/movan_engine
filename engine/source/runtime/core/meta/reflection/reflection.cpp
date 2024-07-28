@@ -1,7 +1,3 @@
-//
-// Created by lifesize
-// Email Address: lifesize1@qq.com
-//
 #include "reflection.h"
 #include <cstring>
 #include <map>
@@ -13,24 +9,24 @@ namespace Movan
         const char* k_unknown_type = "UnknownType";
         const char* k_unknown      = "Unknown";
 
-        static std::map<std::string, ClassFunctionTuple*>       _class_map;
-        static std::multimap<std::string, FieldFunctionTuple*>  _field_map;
-        static std::multimap<std::string, MethodFunctionTuple*> _method_map;
-        static std::map<std::string, ArrayFunctionTuple*>       _array_map;
+        static std::map<std::string, ClassFunctionTuple*>       m_class_map;
+        static std::multimap<std::string, FieldFunctionTuple*>  m_field_map;
+        static std::multimap<std::string, MethodFunctionTuple*> m_method_map;
+        static std::map<std::string, ArrayFunctionTuple*>       m_array_map;
 
         void TypeMetaRegisterinterface::registerToFieldMap(const char* name, FieldFunctionTuple* value)
         {
-            _field_map.insert(std::make_pair(name, value));
+            m_field_map.insert(std::make_pair(name, value));
         }
         void TypeMetaRegisterinterface::registerToMethodMap(const char* name, MethodFunctionTuple* value)
         {
-            _method_map.insert(std::make_pair(name, value));
+            m_method_map.insert(std::make_pair(name, value));
         }
         void TypeMetaRegisterinterface::registerToArrayMap(const char* name, ArrayFunctionTuple* value)
         {
-            if (_array_map.find(name) == _array_map.end())
+            if (m_array_map.find(name) == m_array_map.end())
             {
-                _array_map.insert(std::make_pair(name, value));
+                m_array_map.insert(std::make_pair(name, value));
             }
             else
             {
@@ -40,9 +36,9 @@ namespace Movan
 
         void TypeMetaRegisterinterface::registerToClassMap(const char* name, ClassFunctionTuple* value)
         {
-            if (_class_map.find(name) == _class_map.end())
+            if (m_class_map.find(name) == m_class_map.end())
             {
-                _class_map.insert(std::make_pair(name, value));
+                m_class_map.insert(std::make_pair(name, value));
             }
             else
             {
@@ -52,51 +48,51 @@ namespace Movan
 
         void TypeMetaRegisterinterface::unregisterAll()
         {
-            for (const auto& itr : _field_map)
+            for (const auto& itr : m_field_map)
             {
                 delete itr.second;
             }
-            _field_map.clear();
-            for (const auto& itr : _class_map)
+            m_field_map.clear();
+            for (const auto& itr : m_class_map)
             {
                 delete itr.second;
             }
-            _class_map.clear();
-            for (const auto& itr : _array_map)
+            m_class_map.clear();
+            for (const auto& itr : m_array_map)
             {
                 delete itr.second;
             }
-            _array_map.clear();
+            m_array_map.clear();
         }
 
-        TypeMeta::TypeMeta(std::string type_name) : _type_name(type_name)
+        TypeMeta::TypeMeta(std::string type_name) : m_type_name(type_name)
         {
-            _is_valid = false;
-            _fields.clear();
-            _methods.clear();
+            m_is_valid = false;
+            m_fields.clear();
+            m_methods.clear();
 
-            auto fileds_iter = _field_map.equal_range(type_name);
+            auto fileds_iter = m_field_map.equal_range(type_name);
             while (fileds_iter.first != fileds_iter.second)
             {
                 FieldAccessor f_field(fileds_iter.first->second);
-                _fields.emplace_back(f_field);
-                _is_valid = true;
+                m_fields.emplace_back(f_field);
+                m_is_valid = true;
 
                 ++fileds_iter.first;
             }
 
-            auto methods_iter = _method_map.equal_range(type_name);
+            auto methods_iter = m_method_map.equal_range(type_name);
             while (methods_iter.first != methods_iter.second)
             {
                 MethodAccessor f_method(methods_iter.first->second);
-                _methods.emplace_back(f_method);
-                _is_valid = true;
+                m_methods.emplace_back(f_method);
+                m_is_valid = true;
 
                 ++methods_iter.first;
             }
         }
 
-        TypeMeta::TypeMeta() : _type_name(k_unknown_type), _is_valid(false) { _fields.clear(); _methods.clear(); }
+        TypeMeta::TypeMeta() : m_type_name(k_unknown_type), m_is_valid(false) { m_fields.clear(); m_methods.clear(); }
 
         TypeMeta TypeMeta::newMetaFromName(std::string type_name)
         {
@@ -106,9 +102,9 @@ namespace Movan
 
         bool TypeMeta::newArrayAccessorFromName(std::string array_type_name, ArrayAccessor& accessor)
         {
-            auto iter = _array_map.find(array_type_name);
+            auto iter = m_array_map.find(array_type_name);
 
-            if (iter != _array_map.end())
+            if (iter != m_array_map.end())
             {
                 ArrayAccessor new_accessor(iter->second);
                 accessor = new_accessor;
@@ -120,9 +116,9 @@ namespace Movan
 
         ReflectionInstance TypeMeta::newFromNameAndJson(std::string type_name, const Json& json_context)
         {
-            auto iter = _class_map.find(type_name);
+            auto iter = m_class_map.find(type_name);
 
-            if (iter != _class_map.end())
+            if (iter != m_class_map.end())
             {
                 return ReflectionInstance(TypeMeta(type_name), (std::get<1>(*iter->second)(json_context)));
             }
@@ -131,44 +127,44 @@ namespace Movan
 
         Json TypeMeta::writeByName(std::string type_name, void* instance)
         {
-            auto iter = _class_map.find(type_name);
+            auto iter = m_class_map.find(type_name);
 
-            if (iter != _class_map.end())
+            if (iter != m_class_map.end())
             {
                 return std::get<2>(*iter->second)(instance);
             }
             return Json();
         }
 
-        std::string TypeMeta::getTypeName() { return _type_name; }
+        std::string TypeMeta::getTypeName() { return m_type_name; }
 
         int TypeMeta::getFieldsList(FieldAccessor*& out_list)
         {
-            int count = _fields.size();
+            int count = m_fields.size();
             out_list  = new FieldAccessor[count];
             for (int i = 0; i < count; ++i)
             {
-                out_list[i] = _fields[i];
+                out_list[i] = m_fields[i];
             }
             return count;
         }
 
         int TypeMeta::getMethodsList(MethodAccessor*& out_list)
         {
-            int count = _methods.size();
+            int count = m_methods.size();
             out_list  = new MethodAccessor[count];
             for (int i = 0; i < count; ++i)
             {
-                out_list[i] = _methods[i];
+                out_list[i] = m_methods[i];
             }
             return count;
         }
 
         int TypeMeta::getBaseClassReflectionInstanceList(ReflectionInstance*& out_list, void* instance)
         {
-            auto iter = _class_map.find(_type_name);
+            auto iter = m_class_map.find(m_type_name);
 
-            if (iter != _class_map.end())
+            if (iter != m_class_map.end())
             {
                 return (std::get<0>(*iter->second))(out_list, instance);
             }
@@ -178,20 +174,20 @@ namespace Movan
 
         FieldAccessor TypeMeta::getFieldByName(const char* name)
         {
-            const auto it = std::find_if(_fields.begin(), _fields.end(), [&](const auto& i) {
+            const auto it = std::find_if(m_fields.begin(), m_fields.end(), [&](const auto& i) {
                 return std::strcmp(i.getFieldName(), name) == 0;
             });
-            if (it != _fields.end())
+            if (it != m_fields.end())
                 return *it;
             return FieldAccessor(nullptr);
         }
 
         MethodAccessor TypeMeta::getMethodByName(const char* name)
         {
-            const auto it = std::find_if(_methods.begin(), _methods.end(), [&](const auto& i) {
+            const auto it = std::find_if(m_methods.begin(), m_methods.end(), [&](const auto& i) {
                 return std::strcmp(i.getMethodName(), name) == 0;
             });
-            if (it != _methods.end())
+            if (it != m_methods.end())
                 return *it;
             return MethodAccessor(nullptr);
         }
@@ -202,71 +198,71 @@ namespace Movan
             {
                 return *this;
             }
-            _fields.clear();
-            _fields = dest._fields;
+            m_fields.clear();
+            m_fields = dest.m_fields;
 
+            
+            m_methods.clear();
+            m_methods = dest.m_methods;
 
-            _methods.clear();
-            _methods = dest._methods;
-
-            _type_name = dest._type_name;
-            _is_valid  = dest._is_valid;
+            m_type_name = dest.m_type_name;
+            m_is_valid  = dest.m_is_valid;
 
             return *this;
         }
         FieldAccessor::FieldAccessor()
         {
-            _field_type_name = k_unknown_type;
-            _field_name      = k_unknown;
-            _functions       = nullptr;
+            m_field_type_name = k_unknown_type;
+            m_field_name      = k_unknown;
+            m_functions       = nullptr;
         }
 
-        FieldAccessor::FieldAccessor(FieldFunctionTuple* functions) : _functions(functions)
+        FieldAccessor::FieldAccessor(FieldFunctionTuple* functions) : m_functions(functions)
         {
-            _field_type_name = k_unknown_type;
-            _field_name      = k_unknown;
-            if (_functions == nullptr)
+            m_field_type_name = k_unknown_type;
+            m_field_name      = k_unknown;
+            if (m_functions == nullptr)
             {
                 return;
             }
 
-            _field_type_name = (std::get<4>(*_functions))();
-            _field_name      = (std::get<3>(*_functions))();
+            m_field_type_name = (std::get<4>(*m_functions))();
+            m_field_name      = (std::get<3>(*m_functions))();
         }
 
         void* FieldAccessor::get(void* instance)
         {
             // todo: should check validation
-            return static_cast<void*>((std::get<1>(*_functions))(instance));
+            return static_cast<void*>((std::get<1>(*m_functions))(instance));
         }
 
         void FieldAccessor::set(void* instance, void* value)
         {
             // todo: should check validation
-            (std::get<0>(*_functions))(instance, value);
+            (std::get<0>(*m_functions))(instance, value);
         }
 
         TypeMeta FieldAccessor::getOwnerTypeMeta()
         {
             // todo: should check validation
-            TypeMeta f_type((std::get<2>(*_functions))());
+            TypeMeta f_type((std::get<2>(*m_functions))());
             return f_type;
         }
 
         bool FieldAccessor::getTypeMeta(TypeMeta& field_type)
         {
-            TypeMeta f_type(_field_type_name);
+            TypeMeta f_type(m_field_type_name);
             field_type = f_type;
-            return f_type._is_valid;
+            return f_type.m_is_valid;
         }
 
-        const char* FieldAccessor::getFieldName() const { return _field_name; }
-        const char* FieldAccessor::getFieldTypeName() { return _field_type_name; }
+        const char* FieldAccessor::getFieldName() const { return m_field_name; }
+        const char* FieldAccessor::getFieldTypeName() { return m_field_type_name; }
 
         bool FieldAccessor::isArrayType()
         {
             // todo: should check validation
-            return (std::get<5>(*_functions))();
+            return (std::get<5>(*m_functions))();
         }
 
         FieldAccessor& FieldAccessor::operator=(const FieldAccessor& dest)
@@ -275,30 +271,30 @@ namespace Movan
             {
                 return *this;
             }
-            _functions       = dest._functions;
-            _field_name      = dest._field_name;
-            _field_type_name = dest._field_type_name;
+            m_functions       = dest.m_functions;
+            m_field_name      = dest.m_field_name;
+            m_field_type_name = dest.m_field_type_name;
             return *this;
         }
 
         MethodAccessor::MethodAccessor()
         {
-            _method_name = k_unknown;
-            _functions   = nullptr;
+            m_method_name = k_unknown;
+            m_functions   = nullptr;
         }
 
-        MethodAccessor::MethodAccessor(MethodFunctionTuple* functions) : _functions(functions)
+        MethodAccessor::MethodAccessor(MethodFunctionTuple* functions) : m_functions(functions)
         {
-            _method_name      = k_unknown;
-            if (_functions == nullptr)
+            m_method_name      = k_unknown;
+            if (m_functions == nullptr)
             {
                 return;
             }
 
-            _method_name      = (std::get<0>(*_functions))();
+            m_method_name      = (std::get<0>(*m_functions))();
         }
         const char* MethodAccessor::getMethodName() const{
-            return (std::get<0>(*_functions))();
+            return (std::get<0>(*m_functions))();
         }
         MethodAccessor& MethodAccessor::operator=(const MethodAccessor& dest)
         {
@@ -306,35 +302,35 @@ namespace Movan
             {
                 return *this;
             }
-            _functions       = dest._functions;
-            _method_name      = dest._method_name;
+            m_functions       = dest.m_functions;
+            m_method_name      = dest.m_method_name;
             return *this;
         }
-        void MethodAccessor::invoke(void* instance) { (std::get<1>(*_functions))(instance); }
+        void MethodAccessor::invoke(void* instance) { (std::get<1>(*m_functions))(instance); }
         ArrayAccessor::ArrayAccessor() :
-                _func(nullptr), _array_type_name("UnKnownType"), _element_type_name("UnKnownType")
+            m_func(nullptr), m_array_type_name("UnKnownType"), m_element_type_name("UnKnownType")
         {}
 
-        ArrayAccessor::ArrayAccessor(ArrayFunctionTuple* array_func) : _func(array_func)
+        ArrayAccessor::ArrayAccessor(ArrayFunctionTuple* array_func) : m_func(array_func)
         {
-            _array_type_name   = k_unknown_type;
-            _element_type_name = k_unknown_type;
-            if (_func == nullptr)
+            m_array_type_name   = k_unknown_type;
+            m_element_type_name = k_unknown_type;
+            if (m_func == nullptr)
             {
                 return;
             }
 
-            _array_type_name   = std::get<3>(*_func)();
-            _element_type_name = std::get<4>(*_func)();
+            m_array_type_name   = std::get<3>(*m_func)();
+            m_element_type_name = std::get<4>(*m_func)();
         }
-        const char* ArrayAccessor::getArrayTypeName() { return _array_type_name; }
-        const char* ArrayAccessor::getElementTypeName() { return _element_type_name; }
+        const char* ArrayAccessor::getArrayTypeName() { return m_array_type_name; }
+        const char* ArrayAccessor::getElementTypeName() { return m_element_type_name; }
         void        ArrayAccessor::set(int index, void* instance, void* element_value)
         {
             // todo: should check validation
             size_t count = getSize(instance);
             // todo: should check validation(index < count)
-            std::get<0> (*_func)(index, instance, element_value);
+            std::get<0> (*m_func)(index, instance, element_value);
         }
 
         void* ArrayAccessor::get(int index, void* instance)
@@ -342,13 +338,13 @@ namespace Movan
             // todo: should check validation
             size_t count = getSize(instance);
             // todo: should check validation(index < count)
-            return std::get<1>(*_func)(index, instance);
+            return std::get<1>(*m_func)(index, instance);
         }
 
         int ArrayAccessor::getSize(void* instance)
         {
             // todo: should check validation
-            return std::get<2>(*_func)(instance);
+            return std::get<2>(*m_func)(instance);
         }
 
         ArrayAccessor& ArrayAccessor::operator=(ArrayAccessor& dest)
@@ -357,9 +353,9 @@ namespace Movan
             {
                 return *this;
             }
-            _func              = dest._func;
-            _array_type_name   = dest._array_type_name;
-            _element_type_name = dest._element_type_name;
+            m_func              = dest.m_func;
+            m_array_type_name   = dest.m_array_type_name;
+            m_element_type_name = dest.m_element_type_name;
             return *this;
         }
 
@@ -369,8 +365,8 @@ namespace Movan
             {
                 return *this;
             }
-            _instance = dest._instance;
-            _meta     = dest._meta;
+            m_instance = dest.m_instance;
+            m_meta     = dest.m_meta;
 
             return *this;
         }
@@ -381,8 +377,8 @@ namespace Movan
             {
                 return *this;
             }
-            _instance = dest._instance;
-            _meta     = dest._meta;
+            m_instance = dest.m_instance;
+            m_meta     = dest.m_meta;
 
             return *this;
         }
