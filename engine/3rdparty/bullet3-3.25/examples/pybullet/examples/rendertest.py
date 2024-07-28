@@ -130,8 +130,8 @@ if __name__ == "__main__":
 
   with BulletSim(pybullet.DIRECT):
     plugin_fn = os.path.join(
-        pybullet.__file__.split("bullet3")[0],
-        "bullet3/build/lib.linux-x86_64-3.5/eglRenderer.cpython-35m-x86_64-linux-gnu.so")
+        pybullet.__file__.split("bullet3-3.25")[0],
+        "bullet3-3.25/build/lib.linux-x86_64-3.5/eglRenderer.cpython-35m-x86_64-linux-gnu.so")
     plugin = pybullet.loadPlugin(plugin_fn, "_tinyRendererPlugin")
     if plugin < 0:
       print("\nPlugin Failed to load!\n")

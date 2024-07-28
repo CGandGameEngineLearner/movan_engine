@@ -72,6 +72,13 @@ if(NOT TARGET Jolt)
 
 endif()
 
+if (NOT TARGET BULLET_PHYSICS)
+    add_subdirectory(bullet3-3.25)
+    add_definitions     ( ${BULLET_DEFINITIONS} )
+    include_directories ( ${BULLET_INCLUDE_DIRS} )
+    link_directories    ( ${BULLET_LIBRARY_DIRS} )
+endif()
+
 if(NOT TARGET sol2)
     add_subdirectory(sol2-3.3.0)
 endif()

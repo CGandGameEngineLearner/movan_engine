@@ -194,7 +194,7 @@ while (controllerId < 0):
 
 print("Using controllerId=" + str(controllerId))
 
-#plugin = p.loadPlugin("d:/develop/bullet3/bin/pybullet_vrSyncPlugin_vs2010_x64_release.dll","_vrSyncPlugin")
+#plugin = p.loadPlugin("d:/develop/bullet3-3.25/bin/pybullet_vrSyncPlugin_vs2010_x64_release.dll","_vrSyncPlugin")
 plugin = p.loadPlugin("vrSyncPlugin")
 print("PluginId=" + str(plugin))
 

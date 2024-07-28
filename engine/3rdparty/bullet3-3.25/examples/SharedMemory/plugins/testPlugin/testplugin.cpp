@@ -4,7 +4,7 @@
 /*
 import pybullet as p
 p.connect(p.GUI)
-pluginUid = p.loadPlugin("E:/develop/bullet3/bin/pybullet_testplugin_vs2010_x64_debug.dll")
+pluginUid = p.loadPlugin("E:/develop/bullet3-3.25/bin/pybullet_testplugin_vs2010_x64_debug.dll")
 commandUid = 0
 argument = "plane.urdf"
 p.executePluginCommand(pluginUid,commandUid,argument)

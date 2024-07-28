@@ -50,8 +50,8 @@ class TestEnv(gym.Env):
 
       if self._renderer == "plugin":
         plugin_fn = os.path.join(
-            p.__file__.split("bullet3")[0],
-            "bullet3/build/lib.linux-x86_64-3.5/eglRenderer.cpython-35m-x86_64-linux-gnu.so")
+            p.__file__.split("bullet3-3.25")[0],
+            "bullet3-3.25/build/lib.linux-x86_64-3.5/eglRenderer.cpython-35m-x86_64-linux-gnu.so")
         plugin = p.loadPlugin(plugin_fn, "_tinyRendererPlugin")
         if plugin < 0:
           print("\nPlugin Failed to load! Try installing via `pip install -e .`\n")

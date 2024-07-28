@@ -7,7 +7,7 @@ static const char* mprKernelsCL =
 	" *  This file was ported from mpr.c file, part of libccd.\n"
 	" *  The Minkoski Portal Refinement implementation was ported \n"
 	" *  to OpenCL by Erwin Coumans for the Bullet 3 Physics library.\n"
-	" *  at http://github.com/erwincoumans/bullet3\n"
+	" *  at http://github.com/erwincoumans/bullet3-3.25\n"
 	" *\n"
 	" *  Distributed under the OSI-approved BSD License (the \"License\");\n"
 	" *  see <http://www.opensource.org/licenses/bsd-license.php>.\n"

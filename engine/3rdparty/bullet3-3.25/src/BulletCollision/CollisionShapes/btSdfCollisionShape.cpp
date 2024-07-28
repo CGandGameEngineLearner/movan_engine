@@ -28,7 +28,7 @@ btSdfCollisionShape::btSdfCollisionShape()
 	m_shapeType = SDF_SHAPE_PROXYTYPE;
 	m_data = new btSdfCollisionShapeInternalData();
 
-	//"E:/develop/bullet3/data/toys/ground_hole64_64_8.cdf");//ground_cube.cdf");
+	//"E:/develop/bullet3-3.25/data/toys/ground_hole64_64_8.cdf");//ground_cube.cdf");
 	/*unsigned int field_id=0;
 	Eigen::Vector3d x (1,10,1);
 	Eigen::Vector3d gradient;

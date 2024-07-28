@@ -3,7 +3,7 @@
 //and set change the user constraint to match the pose
 
 //in Python you can load and configure the plugin like this:
-//plugin = p.loadPlugin("e:/develop/bullet3/bin/pybullet_vrSyncPlugin_vs2010_x64_release.dll")
+//plugin = p.loadPlugin("e:/develop/bullet3-3.25/bin/pybullet_vrSyncPlugin_vs2010_x64_release.dll")
 //could also be plugin = p.loadPlugin("vrSyncPlugin.so") on Mac/Linux
 //controllerId = 3
 
