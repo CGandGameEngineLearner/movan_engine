@@ -32,7 +32,7 @@ namespace Movan
             Vector2 cursor_uv,
             Vector2 game_engine_window_size);
         void drawSelectedEntityAxis();
-        std::weak_ptr<GObject> getSelectedGObject() const;
+        std::weak_ptr<SceneObject> getSelectedGObject() const;
         RenderEntity* getAxisMeshByType(EditorAxisMode axis_mode);
         void onGObjectSelected(GObjectID selected_gobject_id);
         void onDeleteSelectedGObject();

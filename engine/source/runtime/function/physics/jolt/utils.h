@@ -5,9 +5,9 @@
 #include "core/math/quaternion.h"
 #include "core/math/vector3.h"
 
-#include "Jolt/Jolt.h"
+#include "jolt/Jolt.h"
 
-#include "Jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h"
+#include "jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h"
 
 namespace JPH
 {

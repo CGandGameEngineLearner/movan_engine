@@ -1,4 +1,4 @@
-#include "runtime/function/framework/level/level.h"
+﻿#include "runtime/function/framework/level/level.h"
 
 #include "runtime/core/base/macro.h"
 
@@ -29,10 +29,10 @@ namespace Movan
         GObjectID object_id = ObjectIDAllocator::alloc();
         ASSERT(object_id != k_invalid_gobject_id);
 
-        std::shared_ptr<GObject> gobject;
+        std::shared_ptr<SceneObject> gobject;
         try
         {
-            gobject = std::make_shared<GObject>(object_id);
+            gobject = std::make_shared<SceneObject>(object_id);
         }
         catch (const std::bad_alloc&)
         {
@@ -77,7 +77,7 @@ namespace Movan
         // create active character
         for (const auto& object_pair : m_gobjects)
         {
-            std::shared_ptr<GObject> object = object_pair.second;
+            std::shared_ptr<SceneObject> object = object_pair.second;
             if (object == nullptr)
                 continue;
 
@@ -142,6 +142,7 @@ namespace Movan
             return;
         }
 
+        // 遍历场景类的所有对象 调用其tick方法
         for (const auto& id_object_pair : m_gobjects)
         {
             assert(id_object_pair.second);
@@ -162,7 +163,7 @@ namespace Movan
         }
     }
 
-    std::weak_ptr<GObject> Level::getGObjectByID(GObjectID go_id) const
+    std::weak_ptr<SceneObject> Level::getGObjectByID(GObjectID go_id) const
     {
         auto iter = m_gobjects.find(go_id);
         if (iter != m_gobjects.end())
@@ -170,7 +171,7 @@ namespace Movan
             return iter->second;
         }
 
-        return std::weak_ptr<GObject>();
+        return std::weak_ptr<SceneObject>();
     }
 
     void Level::deleteGObjectByID(GObjectID go_id)
@@ -178,7 +179,7 @@ namespace Movan
         auto iter = m_gobjects.find(go_id);
         if (iter != m_gobjects.end())
         {
-            std::shared_ptr<GObject> object = iter->second;
+            std::shared_ptr<SceneObject> object = iter->second;
             if (object)
             {
                 if (m_current_active_character && m_current_active_character->getObjectID() == object->getID())

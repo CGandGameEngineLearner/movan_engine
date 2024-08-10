@@ -29,7 +29,7 @@ namespace Movan
         }
     }
 
-    GObject::~GObject()
+    SceneObject::~SceneObject()
     {
         for (auto& component : m_components)
         {
@@ -38,7 +38,7 @@ namespace Movan
         m_components.clear();
     }
 
-    void GObject::tick(float delta_time)
+    void SceneObject::tick(float delta_time)
     {
         for (auto& component : m_components)
         {
@@ -49,7 +49,7 @@ namespace Movan
         }
     }
 
-    bool GObject::hasComponent(const std::string& compenent_type_name) const
+    bool SceneObject::hasComponent(const std::string& compenent_type_name) const
     {
         for (const auto& component : m_components)
         {
@@ -60,7 +60,7 @@ namespace Movan
         return false;
     }
 
-    bool GObject::load(const ObjectInstanceRes& object_instance_res)
+    bool SceneObject::load(const ObjectInstanceRes& object_instance_res)
     {
         // clear old components
         m_components.clear();
@@ -101,7 +101,7 @@ namespace Movan
         return true;
     }
 
-    void GObject::save(ObjectInstanceRes& out_object_instance_res)
+    void SceneObject::save(ObjectInstanceRes& out_object_instance_res)
     {
         out_object_instance_res.m_name       = m_name;
         out_object_instance_res.m_definition = m_definition_url;

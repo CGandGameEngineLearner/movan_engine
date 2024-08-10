@@ -1,10 +1,10 @@
-#include "runtime/function/framework/component/lua/lua_component.h"
+﻿#include "runtime/function/framework/component/lua/lua_component.h"
 #include "runtime/core/base/macro.h"
 #include "runtime/function/framework/object/object.h"
 namespace Movan
 {
 
-    bool find_component_field(std::weak_ptr<GObject>     game_object,
+    bool find_component_field(std::weak_ptr<SceneObject>     game_object,
                               const char*                field_name,
                               Reflection::FieldAccessor& field_accessor,
                               void*&                     target_instance)
@@ -49,7 +49,7 @@ namespace Movan
     }
 
     template<typename T>
-    void LuaComponent::set(std::weak_ptr<GObject> game_object, const char* name, T value)
+    void LuaComponent::set(std::weak_ptr<SceneObject> game_object, const char* name, T value)
     {
         LOG_INFO(name);
         Reflection::FieldAccessor field_accessor;
@@ -65,7 +65,7 @@ namespace Movan
     }
 
     template<typename T>
-    T LuaComponent::get(std::weak_ptr<GObject> game_object, const char* name)
+    T LuaComponent::get(std::weak_ptr<SceneObject> game_object, const char* name)
     {
 
         LOG_INFO(name);
@@ -82,7 +82,7 @@ namespace Movan
         }
     }
 
-    void LuaComponent::invoke(std::weak_ptr<GObject> game_object, const char* name)
+    void LuaComponent::invoke(std::weak_ptr<SceneObject> game_object, const char* name)
     {
         LOG_INFO(name);
 
@@ -145,7 +145,7 @@ namespace Movan
         delete[] methods;
     }
 
-    void LuaComponent::postLoadResource(std::weak_ptr<GObject> parent_object)
+    void LuaComponent::postLoadResource(std::weak_ptr<SceneObject> parent_object)
     {
         m_parent_object = parent_object;
         m_lua_state.open_libraries(sol::lib::base);

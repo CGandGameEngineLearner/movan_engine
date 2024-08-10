@@ -9,11 +9,11 @@
 namespace Movan
 {
     class Character;
-    class GObject;
+    class SceneObject;
     class ObjectInstanceRes;
     class PhysicsScene;
 
-    using LevelObjectsMap = std::unordered_map<GObjectID, std::shared_ptr<GObject>>;
+    using LevelObjectsMap = std::unordered_map<GObjectID, std::shared_ptr<SceneObject>>;
 
     /// The main class to manage all game objects
     class Level
@@ -32,7 +32,7 @@ namespace Movan
 
         const LevelObjectsMap& getAllGObjects() const { return m_gobjects; }
 
-        std::weak_ptr<GObject>   getGObjectByID(GObjectID go_id) const;
+        std::weak_ptr<SceneObject>   getGObjectByID(GObjectID go_id) const;
         std::weak_ptr<Character> getCurrentActiveCharacter() const { return m_current_active_character; }
 
         GObjectID createObject(const ObjectInstanceRes& object_instance_res);

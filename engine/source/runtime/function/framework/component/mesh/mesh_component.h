@@ -19,7 +19,7 @@ namespace Movan
     public:
         MeshComponent() {};
 
-        void postLoadResource(std::weak_ptr<GObject> parent_object) override;
+        void postLoadResource(std::weak_ptr<SceneObject> parent_object) override;
 
         const std::vector<GameObjectPartDesc>& getRawMeshes() const { return m_raw_meshes; }
 

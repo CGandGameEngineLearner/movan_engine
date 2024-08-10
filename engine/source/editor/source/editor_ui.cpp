@@ -414,7 +414,7 @@ namespace Movan
         for (auto& id_object_pair : all_gobjects)
         {
             const GObjectID          object_id = id_object_pair.first;
-            std::shared_ptr<GObject> object    = id_object_pair.second;
+            std::shared_ptr<SceneObject> object    = id_object_pair.second;
             const std::string        name      = object->getName();
             if (name.size() > 0)
             {
@@ -541,7 +541,7 @@ namespace Movan
             return;
         }
 
-        std::shared_ptr<GObject> selected_object = g_editor_global_context.m_scene_manager->getSelectedGObject().lock();
+        std::shared_ptr<SceneObject> selected_object = g_editor_global_context.m_scene_manager->getSelectedGObject().lock();
         if (selected_object == nullptr)
         {
             ImGui::End();

@@ -67,13 +67,16 @@ namespace Movan
 
     bool MovanEngine::tickOneFrame(float delta_time)
     {
+        // 逻辑帧
         logicalTick(delta_time);
+
         calculateFPS(delta_time);
 
         // single thread
         // exchange data between logic and render contexts
         g_runtime_global_context.m_render_system->swapLogicRenderData();
 
+        // 渲染帧
         rendererTick(delta_time);
 
 #ifdef ENABLE_PHYSICS_DEBUG_RENDERER

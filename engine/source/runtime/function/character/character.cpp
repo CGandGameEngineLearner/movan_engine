@@ -8,7 +8,7 @@
 
 namespace Movan
 {
-    Character::Character(std::shared_ptr<GObject> character_object) { setObject(character_object); }
+    Character::Character(std::shared_ptr<SceneObject> character_object) { setObject(character_object); }
 
     GObjectID Character::getObjectID() const
     {
@@ -20,7 +20,7 @@ namespace Movan
         return k_invalid_gobject_id;
     }
 
-    void Character::setObject(std::shared_ptr<GObject> gobject)
+    void Character::setObject(std::shared_ptr<SceneObject> gobject)
     {
         m_character_object = gobject;
         if (m_character_object)

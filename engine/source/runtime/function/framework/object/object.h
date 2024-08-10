@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "runtime/function/framework/component/component.h"
 #include "runtime/function/framework/object/object_id_allocator.h"
@@ -12,14 +12,14 @@
 
 namespace Movan
 {
-    /// GObject : Game Object base class
-    class GObject : public std::enable_shared_from_this<GObject>
+    /// SceneObject : 在游戏引擎中通常叫做GameObject，任何能放置在场景中的对象都是它的子类
+    class SceneObject : public std::enable_shared_from_this<SceneObject>
     {
         typedef std::unordered_set<std::string> TypeNameSet;
 
     public:
-        GObject(GObjectID id) : m_id {id} {}
-        virtual ~GObject();
+        SceneObject(GObjectID id) : m_id {id} {}
+        virtual ~SceneObject();
 
         virtual void tick(float delta_time);
 

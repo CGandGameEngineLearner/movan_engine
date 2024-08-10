@@ -25,9 +25,9 @@ namespace Movan
         void showCameraInfo(std::shared_ptr<Level> level) const;
 
     private:
-        void drawBones(std::shared_ptr<GObject> object) const;
-        void drawBonesName(std::shared_ptr<GObject> object) const;
-        void drawBoundingBox(std::shared_ptr<GObject> object) const;
-        void drawCameraInfo(std::shared_ptr<GObject> object) const;
+        void drawBones(std::shared_ptr<SceneObject> object) const;
+        void drawBonesName(std::shared_ptr<SceneObject> object) const;
+        void drawBoundingBox(std::shared_ptr<SceneObject> object) const;
+        void drawCameraInfo(std::shared_ptr<SceneObject> object) const;
     };
 } // namespace Movan

@@ -14,7 +14,7 @@ namespace Movan
     public:
         AnimationComponent() = default;
 
-        void postLoadResource(std::weak_ptr<GObject> parent_object) override;
+        void postLoadResource(std::weak_ptr<SceneObject> parent_object) override;
 
         void tick(float delta_time) override;
 

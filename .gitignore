@@ -6,7 +6,7 @@ CPM_*.cmake
 .DS_Store
 *.code-workspace
 *.patch
-!engine/3rdparty/JoltPhysics/Build
+!engine/third_party/JoltPhysics/Build
 
 # Visual Studio
 CMakeSettings.json

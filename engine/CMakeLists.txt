@@ -1,6 +1,6 @@
 
 set(ENGINE_ROOT_DIR "${MOVAN_ROOT_DIR}/engine")
-set(THIRD_PARTY_DIR "${ENGINE_ROOT_DIR}/3rdparty")
+set(THIRD_PARTY_DIR "${ENGINE_ROOT_DIR}/third_party")
 set(ENGINE_ASSET_DIR "/asset")
 
 set(DEPLOY_CONFIG_DIR "configs/deployment")
@@ -50,7 +50,7 @@ endif()
 set(SHADER_COMPILE_TARGET MovanShaderCompile)
 add_subdirectory(shader)
 
-add_subdirectory(3rdparty)
+add_subdirectory(third_party)
 
 add_subdirectory(source/runtime)
 add_subdirectory(source/editor)

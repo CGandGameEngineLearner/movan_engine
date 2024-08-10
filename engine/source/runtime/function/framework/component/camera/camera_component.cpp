@@ -17,7 +17,7 @@
 
 namespace Movan
 {
-    void CameraComponent::postLoadResource(std::weak_ptr<GObject> parent_object)
+    void CameraComponent::postLoadResource(std::weak_ptr<SceneObject> parent_object)
     {
         m_parent_object = parent_object;
 
