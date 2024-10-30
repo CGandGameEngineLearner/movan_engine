@@ -28,6 +28,7 @@
 #include "Jolt/Physics/Collision/Shape/StaticCompoundShape.h"
 #include "Jolt/Physics/Collision/ShapeCast.h"
 #include "Jolt/Physics/PhysicsSystem.h"
+#include "btBulletDynamicsCommon.h"
 
 namespace Movan
 {

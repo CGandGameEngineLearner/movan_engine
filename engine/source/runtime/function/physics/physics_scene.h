@@ -3,7 +3,6 @@
 #include "runtime/core/math/axis_aligned.h"
 
 #include "runtime/function/physics/physics_config.h"
-
 namespace JPH
 {
     class PhysicsSystem;
